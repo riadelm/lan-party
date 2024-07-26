@@ -11,3 +11,45 @@
     top: 0;
     left: 0;
   }
+
+  .click-button {
+    position: absolute;
+    bottom: 25%; /* 3/4th of the height */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18vw; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease;
+  }
+  
+  .click-button:hover {
+    box-shadow: 0 0 10px 10px red;
+  }
+  
+  .click-button:active {
+    transform: translateX(-50%) scale(0.80); /* Slightly smaller on click */
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 4%; /* 3/4th of the height */
+    left: 95%;
+    transform: translateX(-50%);
+    width: 10vw; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease;
+  }
+
+  .forum-button {
+    position: absolute;
+    bottom: 2%; /* 3/4th of the height */
+    left: 5%;
+    transform: translateX(-50%);
+    width: 8vw; /* Adjust size as needed */
+    height: auto;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .forum-button:active {
+    transform: translateX(-50%) scale(0.80); /* Slightly smaller on click */
+  }

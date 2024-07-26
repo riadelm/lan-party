@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ImagePixelated } from 'react-pixelate';
 import './homepage.css';
 import images from './utils/importAllHomepageImages';
-// import image2 from './assets/homepage/lan-party-02.jpeg';
-
-// const images = [image1, image2];
+import clickImage from './assets/homepage/buttons/click.png'
+import forumImage from './assets/homepage/buttons/forum.png'
+import logoGif from './assets/homepage/buttons/logo.gif'
 
 function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -68,6 +68,21 @@ function HomePage() {
         pixelSize={pixelSize}
         fillTransparencyColor={"grey"}
         style={{ objectFit: 'cover', display: 'block' }}
+      />
+       <img
+        src={clickImage}
+        alt="Click Button"
+        className="click-button"
+      />
+      <img
+        src={forumImage}
+        alt="Click Button"
+        className="forum-button"
+      />
+      <img
+        src={logoGif}
+        alt="Titans of Finance"
+        className="logo"
       />
     </div>
   );
