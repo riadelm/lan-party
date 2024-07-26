@@ -30,12 +30,39 @@
     transform: translateX(-50%) scale(0.80); /* Slightly smaller on click */
   }
 
-  .loading-gif {
+  .loading-gif-1 {
     position: absolute;
-    top: 50%;
+    bottom: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10vw; /* Adjust size based on viewport width */
+    width: 12vw; /* Adjust size based on viewport width */
+    height: auto;
+  }
+
+  .loading-gif-2 {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw; /* Adjust size based on viewport width */
+    height: auto;
+  }
+
+  .loading-gif-3 {
+    position: absolute;
+    bottom: 0%;
+    left: 6%;
+    transform: translate(-50%, -50%);
+    width: 12vw; /* Adjust size based on viewport width */
+    height: auto;
+  }
+
+  .loading-gif-4 {
+    position: absolute;
+    z-index: 2;
+    bottom: 6%;
+    left: 6%;
+    width: 20vw; /* Adjust size based on viewport width */
     height: auto;
   }
 
