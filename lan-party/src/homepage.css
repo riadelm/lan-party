@@ -23,11 +23,20 @@
   }
   
   .click-button:hover {
-    box-shadow: 0 0 10px 10px red;
+    box-shadow: 0 0 15px 15px red;
   }
   
   .click-button:active {
     transform: translateX(-50%) scale(0.80); /* Slightly smaller on click */
+  }
+
+  .loading-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10vw; /* Adjust size based on viewport width */
+    height: auto;
   }
 
   .logo {

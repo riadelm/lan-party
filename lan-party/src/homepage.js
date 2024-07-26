@@ -5,20 +5,25 @@ import images from './utils/importAllHomepageImages';
 import clickImage from './assets/homepage/buttons/click.png'
 import forumImage from './assets/homepage/buttons/forum.png'
 import logoGif from './assets/homepage/buttons/logo.gif'
+import loading1 from './assets/homepage/loading/loading1.gif';
 
 function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [pixelSize, setPixelSize] = useState(0);
+  const [showLoading, setShowLoading] = useState(false);
+  const [rotateImages, setRotateImages] = useState(true);
   const containerRef = useRef(null);
   const pixelatedImageRef = useRef(null);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change image every 2 seconds
+    if (rotateImages) {
+        const intervalId = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 2000); // Change image every 2 seconds
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, []);
+        return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    }
+  }, [rotateImages]);
 
   useEffect(() => {
     function updateCanvasSize() {
@@ -40,23 +45,37 @@ function HomePage() {
   }, []);
 
   useEffect(() => {
-    const steps = 15; // Number of steps (2 seconds / 0.5 second intervals)
-    const stepSize = 50 / steps; // Pixel size increment per step
+    if (rotateImages) {
+        const steps = 15; // Number of steps (2 seconds / 0.5 second intervals)
+        const stepSize = 50 / steps; // Pixel size increment per step
 
-    let step = 0;
+        let step = 0;
 
-    const intervalId = setInterval(() => {
-      setPixelSize(stepSize * step);
-      step += 1;
+        const intervalId = setInterval(() => {
+        setPixelSize(stepSize * step);
+        step += 1;
 
-      if (step > steps) {
-        clearInterval(intervalId);
-        setPixelSize(0); // Reset pixel size for the next image
-      }
-    }, 100);
+        if (step > steps) {
+            clearInterval(intervalId);
+            setPixelSize(0); // Reset pixel size for the next image
+        }
+        }, 100);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, [currentImageIndex]);
+        return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    }
+  }, [currentImageIndex, rotateImages]);
+
+  const handleClick = () => {
+    setRotateImages(false);
+    setPixelSize(50);
+    setTimeout(() => {
+      setShowLoading(true);
+      setTimeout(() => {
+        setShowLoading(false);
+        setRotateImages(true);
+      }, 3000); // Show loading for 3 seconds
+    }, 2000); // Keep pixelSize 50 for 2 seconds
+  };
 
   return (
     <div className="background">
@@ -69,11 +88,21 @@ function HomePage() {
         fillTransparencyColor={"grey"}
         style={{ objectFit: 'cover', display: 'block' }}
       />
-       <img
-        src={clickImage}
-        alt="Click Button"
-        className="click-button"
-      />
+      {!showLoading && (
+        <img
+          src={clickImage}
+          alt="Click Button"
+          className="click-button"
+          onClick={handleClick}
+        />
+      )}
+      {showLoading && (
+        <img
+          src={loading1}
+          alt="Loading"
+          className="loading-gif"
+        />
+      )}
       <img
         src={forumImage}
         alt="Click Button"
