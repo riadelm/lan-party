@@ -8,7 +8,12 @@ import logoGif from './assets/homepage/buttons/logo.gif'
 import loading1 from './assets/homepage/loading/loadingbar1.gif';
 import loading2 from './assets/homepage/loading/loadingbar2.gif';
 import loading3 from './assets/homepage/loading/loadingbar3.gif';
-import loading4 from './assets/homepage/loading/loadingbarfinal.gif';
+import loading4 from './assets/homepage/loading/loadingbar4.gif';
+import loading5 from './assets/homepage/loading/loadingbar5.gif';
+// import loading6 from './assets/homepage/loading/loadingbar6.gif';
+import roundloading from './assets/homepage/loading/roundloading2.gif';
+import reboot from './assets/homepage/loading/factoryreset.jpeg';
+import cursorGif from './assets/homepage/loading/cursorloading.gif';
 
 function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -17,6 +22,12 @@ function HomePage() {
   const [showLoading2, setShowLoading2] = useState(false);
   const [showLoading3, setShowLoading3] = useState(false);
   const [showLoading4, setShowLoading4] = useState(false);
+  const [showLoading5, setShowLoading5] = useState(false);
+  const [showRoundLoading, setShowRoundLoading] = useState(false);
+  const [showReboot, setShowReboot] = useState(false);
+  const [showWhiteBackground, setShowWhiteBackground] = useState(false);
+  const [showCustomCursor, setShowCustomCursor] = useState('');
+  const cursorRef = useRef(null);
   const [rotateImages, setRotateImages] = useState(true);
   const containerRef = useRef(null);
   const pixelatedImageRef = useRef(null);
@@ -73,31 +84,68 @@ function HomePage() {
 
   const handleClick = () => {
     setRotateImages(false);
-    setPixelSize(50);
+    setPixelSize(70);
+    setShowCustomCursor(true);
     setTimeout(() => {
       setShowLoading1(true);
+      setShowLoading2(true);
       setTimeout(() => {
-        setShowLoading2(true);
+        setShowLoading5(true);
+        setShowLoading3(true);
+        setShowLoading2(false);
         setTimeout(() => {
-          setShowLoading3(true);
+          setShowLoading4(true);
+          setShowLoading5(true)
           setShowLoading1(false);
           setTimeout(() => {
-            setShowLoading2(false);
+            setShowLoading4(false);
             setTimeout(() => {
+                setShowWhiteBackground(true);
+                setShowRoundLoading(true);
                 setShowLoading3(false);
-                setShowLoading4(true);
                 setTimeout(() => {
-                    setShowLoading4(false);
-                    setRotateImages(true);
-                }, 5000); // show full loading image for 5 seconds
-            }, 3000); // show third for 3 more seconds while removing second loading gif
-          }, 7000); // Show third loading gif for 7 seconds
-        }, 6000); // Show second loading gif for 6 seconds
-      }, 3000); // Show first loading gif for 3 seconds
-    }, 2000); // Keep pixelSize 50 for 2 seconds
+                    setShowReboot(true);
+                    setShowRoundLoading(false);
+                    setShowWhiteBackground(false);
+                    setTimeout(() => {
+                        setShowWhiteBackground(true);
+                        setShowReboot(false);
+                        setTimeout(() => {
+                            setShowWhiteBackground(false);
+                            setShowLoading5(false);
+                            setShowCustomCursor(false);
+                            setRotateImages(true);
+                        }, 8000);
+                    }, 18000); // show full loading image for 5 seconds
+                }, 8000); // show full loading image for 5 seconds
+            }, 8000); // show third for 3 more seconds while removing second loading gif
+          }, 4500); // Show third loading gif for 7 seconds
+        }, 12000); // Show second loading gif for 6 seconds
+      }, 7000); // Show first loading gif for 3 seconds
+    }, 1000); // Keep pixelSize 50 for 2 seconds
   };
+
+  useEffect(() => {
+    const moveCursor = (e) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${e.clientX}px`;
+        cursorRef.current.style.top = `${e.clientY}px`;
+      }
+    };
+
+    if (showCustomCursor) {
+      document.addEventListener('mousemove', moveCursor);
+    } else {
+      document.removeEventListener('mousemove', moveCursor);
+    }
+
+    return () => document.removeEventListener('mousemove', moveCursor);
+  }, [showCustomCursor]);
+
+  
   return (
-    <div className="background">
+    <div className={`background ${showCustomCursor ? 'hide-default-cursor' : ''}`} ref={containerRef} style={{ backgroundColor: showWhiteBackground ? 'white' : '' , backgroundImage: showReboot ? `url(${reboot})` : ''}}>
+        {!showWhiteBackground && !showReboot && (
       <ImagePixelated
         ref={pixelatedImageRef}
         src={images[currentImageIndex]}
@@ -107,7 +155,8 @@ function HomePage() {
         fillTransparencyColor={"grey"}
         style={{ objectFit: 'cover', display: 'block' }}
       />
-      {!showLoading1 && !showLoading2 && !showLoading3 && !showLoading4 &&(
+        )}
+      {!showLoading1 && !showLoading2 && !showLoading3 && !showLoading4 && !showLoading5 && !showRoundLoading && (
         <img
           src={clickImage}
           alt="Click Button"
@@ -143,16 +192,41 @@ function HomePage() {
           className="loading-gif-4"
         />
       )}
-      <img
-        src={forumImage}
-        alt="Click Button"
-        className="forum-button"
-      />
-      <img
-        src={logoGif}
-        alt="Titans of Finance"
-        className="logo"
-      />
+       {showLoading5 && (
+        <img
+          src={loading5}
+          alt="Loading 5"
+          className="loading-gif-5"
+        />
+      )}
+       {showRoundLoading && (
+        <img
+          src={roundloading}
+          alt="Round loading"
+          className="round-loading"
+        />
+      )}
+      {showCustomCursor && (
+        <div
+          ref={cursorRef}
+          className="custom-cursor"
+          style={{ backgroundImage: `url(${cursorGif})` }}
+        ></div>
+      )}
+      {!showLoading1 && !showLoading2 && !showLoading3 && !showLoading4 && !showLoading5 && !showRoundLoading && (
+        <img
+            src={forumImage}
+            alt="Click Button"
+            className="forum-button"
+        />
+      )}
+      {!showLoading1 && !showLoading2 && !showLoading3 && !showLoading4 && !showLoading5 && !showRoundLoading && (
+        <img
+            src={logoGif}
+            alt="Titans of Finance"
+            className="logo"
+        />
+      )}
     </div>
   );
 }
