@@ -1,0 +1,621 @@
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: arial, sans-serif, helvetica;
+    background-color: #e5e5e5;
+    font-size: 8pt;
+    background-image: url('../assets/myspacepage/luckystarbackground.png');
+    background-size: 70%;
+    height: 100vh;
+    color: #333;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-family:fantasy!;
+  }
+
+  h2 {
+    background-color: #f000e0;
+    color: #ffffff;
+    background-image: url('../assets/myspacepage/falling_stars.gif');
+  }
+
+  section {
+    border: 2px solid #f000e0;
+    background-color: #ddffbb;
+    margin-top: 2vh;
+  }
+
+  html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+header {
+    background-color: #f000e0;
+    color: #ffffff;
+    background-image: url('../assets/myspacepage/falling_stars.gif');
+}
+
+  .myspace-header-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2vh;
+    width: 40vw;
+    margin-bottom: -19%;
+  }
+
+  .page-content-container {
+    display: grid;
+    grid-template-columns: 325px 453px;
+    margin-left: 20%;
+    margin-right: 20%;
+    grid-column-gap: 20px;
+    grid-template-areas: "sidebar main";
+    /* background-color: #003399; */
+  }
+
+  .profile-sidebar {
+    grid-area: sidebar;
+    /* margin-left: 27px; */
+    width: 300px;
+    padding-right: 17px;
+  }
+  
+  h1 {
+    font-size: 12.25pt;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  
+  .profile-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    background-color: rgb(102, 153, 204);
+    height: 20px;
+    font-size: 9px;
+  }
+
+  .navbar ul {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    text-size-adjust: 80%;
+  }
+  
+  .navbar li::after {
+    content: '|';
+    margin: .33rem;
+    color: black;
+  }
+  
+  .navbar li:last-child::after {
+    content: '';
+  }
+  
+  .navbar a:hover {
+    color: #003399;
+  }  
+
+  .profile-picture-container {
+    display: grid;
+    grid-template-columns: 170px 124px;
+    /* grid-template-rows: 176px; */
+    /* grid-column-gap: 15px; */
+    margin-bottom: 12px;
+    border: 3px solid #f000e0;
+    padding-top: 1vh;
+    padding-bottom: 3vh;
+    background-color: #ddffbb;
+  }
+  
+  .profile-picture-container p {
+    margin: 0;
+    padding: 0;
+    background-color: #ddffbb;
+  }
+  
+  .profile-pic {
+    grid-area: 2/1;
+    width: 100%;
+  }
+
+  .profile-name {
+    grid-area: 1/1;
+    font-family: fantasy;
+    margin-bottom: 2vh;
+    /* text-shadow: -3px -3px 0 #e1bebe, 3px -3px 0 #e1bebe, -3px 3px 0 #e1bebe, 3px 3px 0 #e1bebe; */
+  }
+
+  .profile-picture-container h1 {
+    font-size: 30px;
+    color:rgb(12, 1, 46);
+  }
+  
+  .personal-msg {
+    grid-area: 2/2;
+    size: 120%;
+    color:#f000e0;
+  }
+  
+  .gender-age {
+    grid-area: 2/2;
+    margin: 0;
+    padding: 20px;
+    
+  }
+  
+  .gender-age li:first-child {
+    margin-top: 28px;
+  }
+  
+  .last-login {
+    grid-area: 2/2;
+    align-self: end;
+  }
+  
+  .last-login li:last-child {
+    margin-bottom: 15px;
+  }
+  
+  .pics-videos {
+    grid-area: 2/2;
+    justify-self: center;
+    align-self: end;
+  }
+
+  .mood {
+    grid-area: 3/1;
+    justify-self: center;
+    align-self: end;
+  }
+
+
+  /*
+========================================
+Contact Box
+========================================
+*/
+.contact-box {
+    border: 2px solid #f000e0;
+    height: 149px;
+    width: 300px;
+    margin-bottom: 24px;
+  }
+  
+  .contact-box h2 {
+    background-color: #f000e0;
+    height: 17px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: verdana, arial, sans-serif, helvetica;
+    margin: 0;
+  }
+  
+  .contact-images {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+  
+  /*
+  ========================================
+  MySpace URL
+  ========================================
+  */
+  .myspace-url-box {
+    /* height: 30px; */
+    margin-bottom: 30px;
+    padding: 8px;
+  }
+  
+  .myspace-url-box h3,
+  .myspace-url-box p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+  }
+  
+  .myspace-url-box h3 {
+    font-size: 8pt;
+    padding-left: 2px;
+  }
+  
+  .myspace-url-box p {
+    padding-left: 6px;
+    ;
+  }
+  
+  
+/*
+========================================
+Sidebar Table Class
+========================================
+*/
+.sidebar-table {
+    border: 2px solid #f000e0;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 3px;
+  }
+  
+  .sidebar-table-h2 {
+    text-align: left;
+    height: 17px;
+    padding-left: 15px;
+    padding-top: 2px;
+    background-color: #f000e0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .sidebar-table-header {
+    vertical-align: top;
+    text-align: left;
+    width: 107px;
+    color: #336699;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 8pt;
+  }
+  
+  .sidebar-table-data {
+    width: 184px;
+    padding: 3px;
+  }
+
+  /*
+========================================
+Main
+========================================
+*/
+
+  main {
+    grid-area: main;
+  }
+
+  .main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 151px;
+    background-color: rgb(0, 51, 153);
+    color: #ffffff;
+  }
+  
+  .main-header ul {
+    list-style-type: none;
+  }
+  
+  .main-header a:link {
+    color: #ffffff;
+    font-weight: normal;
+  }
+  
+  .main-header a:visited {
+    color: #ffffff;
+  }
+  
+  .user-network h2{
+    margin: 0;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+/*
+========================================
+Blog
+========================================
+*/
+.blog {
+    display: grid;
+    grid-auto-rows: 29px;
+    flex-direction: column;
+    margin-top: 13px;
+    margin-left: 12px;
+    margin-bottom: 16px;
+    height: 170px;
+  }
+  
+  .blog p {
+    margin-top: 3px;
+  }
+
+  .status-pic {
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+/*
+========================================
+Blurbs
+========================================
+*/
+.main-section-header {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+  
+  .main-section-h2 {
+    margin-left: 20px;
+  }
+  
+  .blurbs h3 {
+    margin: 0;
+    font-size: 9pt;
+    margin-left: 15px;
+  }
+  
+  .blurbs p:nth-of-type(5) {
+    margin-bottom: 2em;
+  }
+  
+  .blurbs p {
+    margin: 0 10px 15px 15px;
+  }
+
+  .google {
+    width: 4vw;
+  }
+
+  .footer-gif {
+    width: 100%;
+  }
+  
+  .info {
+    color: green;
+    font-weight: bold;
+  }
+
+/*
+========================================
+Friend Space
+========================================
+*/
+.friends header {
+    margin-bottom: 6px;
+  }
+  
+  .friends p:nth-of-type(1) {
+    margin-top: 0;
+    margin-left: 15px;
+  }
+  
+  .focus-highlight {
+    color: #cc0000;
+    font-weight: normal;
+    font-size: 10pt;
+  }
+  
+  .friend-pic-container {
+    display: grid;
+    grid-template-columns: repeat(4, 109px);
+    grid-template-rows: 160px 193px;
+  }
+  
+  .friend-pic-container figure {
+    margin: 0;
+    padding: auto;
+    display: inline-block;
+  }
+  
+  .friend-pic-container figcaption {
+    text-align: center;
+    color:#f000e0;
+  }
+  
+  .friend-pic-container img {
+    display: block;
+    margin: auto;
+    border:0;
+	width:90%;
+	height:auto;
+  }
+  
+  .friends-list-link {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .friends-list-link {
+    margin-top: 7px;
+    margin-right: 8px;
+    margin-bottom: 30px;
+    color:#f000e0;
+  }
+  
+  .friends-list-link a {
+    color: #cc0000;
+  }
+  
+  /*
+  ========================================
+  Comment Wall
+  ========================================
+  */
+
+  .comment-wall .main-section-header {
+    margin-bottom: 3px;
+  }
+  
+  .comment-wall .main-section-h2 {
+    margin-bottom: 0;
+  }
+  
+  #comment-counter {
+    margin-top: 0;
+    margin-left: 15px;
+    margin-bottom: 3px;
+  }
+  
+  .comment-wall table {
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  
+  .comment-wall th {
+    /* background-color: rgb(255, 153, 51); */
+    width: 158px;
+    padding: 3px;
+    vertical-align: top;
+  }
+  
+  .comment-wall td {
+    vertical-align: top;
+    background-color: #e603ff2d;
+    width: 269px;
+    padding: 3px;
+  }
+
+  .comment-pfp {
+    width: 70%;
+  }
+
+  .comment-img {
+    width: 65%;
+  }
+  
+  .comment-wall figcaption,
+  .comment-wall figure {
+    margin: 0;
+  }
+  
+  .comment-wall figcaption {
+    margin-bottom: 1em;
+  }
+  
+  .comment-wall figure {
+    width: 200px;
+    margin-bottom: 49.33px;
+  }
+  
+  .comment-wall h3 {
+    font-size: 10pt;
+    margin: 0;
+    margin-bottom: 1em;
+  }
+  
+  .comment-wall p {
+    font-weight: normal;
+    text-align: left;
+    font-size: 9pt;
+    margin: 0;
+  }
+
+  .comment-link {
+    font-weight: bold!;
+    font-style: italic!;
+  }
+  
+  #add-comment {
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+
+/*
+========================================
+Footer
+========================================
+*/
+footer {
+    display: grid;
+    grid-template-rows: 16px 39px;
+    background-color: #e5e5e5;
+    padding-top: 10px;
+    height: 65px;
+  }
+  
+  footer a {
+    text-decoration: underline;
+    font-weight: normal;
+    font-size: 8pt;
+  }
+  
+  footer ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  footer li:after {
+    content: ' | ';
+    font-weight: normal;
+  }
+  
+  #last:after {
+    content: none;
+  }
+  
+  footer small {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    font-size: 8pt;
+    font-weight: normal;
+  }
