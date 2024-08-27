@@ -1,0 +1,318 @@
+.fanfic-body {
+    font-family: Helvetica,Verdana,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.container {
+    display: block;
+    width: 80%;
+    margin: auto auto;
+}
+
+.container:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.span-24, div.span-24 {
+    width: 1142px;
+    margin: 0;
+}
+
+.user_bar,.subnav_bar,.footer {
+    background-color: #222;
+    padding: 3px 0
+}
+
+.user_bar ul,.subnav_bar ul,.footer ul {
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.user_bar ul li,.subnav_bar ul li,.footer ul li {
+    margin: 0;
+    float: left;
+    padding: 0 13px;
+    color: #A5A5A5
+}
+
+.user_bar ul li a,.subnav_bar ul li a,.footer ul li a {
+    color: #A5A5A5;
+    font-size: 11px
+}
+
+.user_bar ul li a.light,.subnav_bar ul li a.light,.footer ul li a.light {
+    color: #F8F8F8
+}
+
+.user_bar ul li a:hover,.subnav_bar ul li a:hover,.footer ul li a:hover {
+    color: #FFFF99;
+    text-decoration: underline
+}
+
+
+.header {
+    background: url('../assets/fanficpage/header_bg.png') #66cc00 repeat-x;
+    border-bottom: 1px solid #D8D8D8
+}
+
+.header img {
+    max-width: 730px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.writing a {
+    float:left;
+    margin-right:2px; 
+}
+
+.hdr_left {
+    float: left;
+    width: 413px;
+    background: url('../assets/fanficpage/hdr_left_bg.png') #66cc00 no-repeat;
+}
+
+.browsing {
+    margin-left: 8px;
+}
+
+.logo-ff {
+    float: left;
+    margin: 20px 0 0 50px;
+    display: block;
+}
+
+.hdr_left_btn_grp {
+    float: left;
+    margin: 9px 0 10px 85px;
+}
+
+.hdr_btn {
+    float: left;
+    height: 20px;
+    background: url('../assets/fanficpage/button_bg.png') #333 repeat-x;
+    padding: 3px 10px 7px 10px;
+    font-weight: bold;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-box-shadow: 3px 3px 3px #888;
+    -webkit-box-shadow: 3px 3px 3px #888;
+    box-shadow: 3px 3px 3px #888;
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.hdr_btn a, a:link {
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    font-weight: bold;
+    margin: 0;
+    padding: 3px;
+    vertical-align: baseline;
+}
+
+a img {
+    display: block;
+    float: left;
+    margin-right: 2px;
+    max-width: 620px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#home-btn {
+    padding: 0;
+}
+
+.login_grp {
+    float: left;
+    width: 100%;
+    padding: 0;
+    text-align: center
+}
+
+.login_grp a {
+    color: black;
+    font-weight: bold
+}
+
+.login_grp img {
+    margin: 0;
+    border: none;
+    vertical-align: text-bottom;
+    display: inline
+}
+
+a.login:link,a.login:visited,a.login:hover,a.login:active {
+    color: #333;
+    font-weight: bold
+}
+
+.hdr_right {
+    float: left;
+    width: 600px
+}
+
+.top_rt_hdr {
+    float: left;
+    height: 20px;
+    background: url('../assets/fanficpage/top_rt_header_bg.png') #a9e84e repeat-x;
+    padding: 15px 15px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px
+}
+
+.top_rt_hdr ul {
+    float: left;
+    list-style: none;
+    padding: 0;
+    margin-right: 10px
+}
+
+.top_rt_hdr ul li {
+    margin: 0;
+    float: left;
+    padding-left: 6px
+}
+
+.top_rt_hdr ul li a {
+    color: #333
+}
+
+.search_form {
+    float: left;
+    margin: -7px 0 0 0
+}
+
+.search_field {
+    width: 150px
+}
+
+ul.nav {
+    float: left;
+    width: 475px;
+    clear: both;
+    list-style: none;
+    margin: 3px 0 0 0;
+    padding: 0
+}
+
+ul.nav li {
+    margin: 0;
+    float: left;
+    padding-left: 10px;
+    width: 70px
+}
+
+ul.nav li img,ul.nav li a {
+    margin: 0;
+    width: 70px;
+    float: left;
+    color: white;
+    text-align: center
+}
+
+#nav li a:hover,#nav li a:focus {
+    background-color: #F6C739;
+    color: #FFF;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+.subnav_bar .fanfics {
+    display: none
+}
+
+.subnav_bar .popular {
+    display: none
+}
+
+.subnav_bar .users {
+    display: none
+}
+
+.subnav_bar .social {
+    display: none
+}
+
+.subnav_bar .show_fanfics {
+    display: inline
+}
+
+.subnav_bar .show_popular {
+    display: inline
+}
+
+.subnav_bar .show_users {
+    display: inline
+}
+
+.subnav_bar .show_social {
+    display: inline
+}
+
+ul.alpha_nav {
+    list-style: none;
+    padding-left: 0px;
+    padding-bottom: 20px
+}
+
+ul.alpha_nav li {
+    float: left;
+    padding: 0 3px
+}
+
+ul.req_nav {
+    padding: 0 0 20px 0;
+}
+
+ul.req_nav li {
+    float: left;
+    padding-left: 20px;
+    list-style-type: none;
+    font-size: 15px;
+}
+
+ul.sort_nav {
+    padding: 0 0 10px 0;
+}
+
+ul.sort_nav li {
+    float: left;
+    padding-left: 10px;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.content div.user_list {
+    width: 130px;
+    float: left;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 12px
+}
+
+.content div.user_list img {
+    margin: 0 auto
+}

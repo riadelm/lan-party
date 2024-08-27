@@ -56,7 +56,7 @@ const MySpacePage = () => {
         setActivePopupId(null);
     };
     return (
-        <>
+        <div className="myspace-body">
         <img className="myspace-header-img" src={searchBar}></img>
         <nav class="search-bar">
             <form>
@@ -525,24 +525,7 @@ const MySpacePage = () => {
 
             <small>©2003-2006 MySpace.com. All Rights Reserved.</small>
             </footer>
-    </>
-        // <div className="myspace-container">
-        //   <div className="content-wrapper">
-        //     <div className="post">
-        //       <h2>Post Title</h2>
-        //       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-        //     </div>
-        //     <div className="comment">
-        //       <h3>Comment 1</h3>
-        //       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-        //     </div>
-        //     <div className="comment">
-        //       <h3>Comment 2</h3>
-        //       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-        //     </div>
-        //     {/* Add more posts and comments as needed */}
-        //   </div>
-        // </div>
+    </div>
     );
 };
 
