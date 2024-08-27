@@ -84,13 +84,43 @@ header {
     background-image: url('../assets/myspacepage/falling_stars.gif');
 }
 
+/*
+========================================
+Search Bar
+========================================
+*/
+.search-bar {
+    display: inline;
+    /* grid-template-columns: .25fr 1fr .25fr; */
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .search-bar form {
+    justify-self: center;
+    margin: 0;
+  }
+  
+  .search-bar form [type="text"] {
+    width: 160px;
+  }
+  
+  .search-bar form [type="radio"] {
+    margin-right: .33rem;
+  }
+  
+  .search-bar ul {
+    display: flex;
+  }
+
   .myspace-header-img {
-    display: block;
+    display: inline;
     margin-left: auto;
     margin-right: auto;
     padding: 2vh;
     width: 40vw;
     margin-bottom: -19%;
+    margin-right: -19%;
   }
 
   .page-content-container {
