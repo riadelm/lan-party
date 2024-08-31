@@ -1,5 +1,7 @@
+
+
 .fanfic-body {
-    font-family: Helvetica,Verdana,Arial,sans-serif;
+    font-family: sans-serif;
     font-size: 14px;
     line-height: 1.5;
     padding: 0;
@@ -7,10 +9,21 @@
     margin: 0;
 }
 
-.container {
+
+div {
     display: block;
-    width: 80%;
-    margin: auto auto;
+    unicode-bidi: isolate;
+}
+
+ul, ol {
+    margin: 0 1.5em 1.5em 0;
+}
+
+.container {
+    /* margin-top: 15px; */
+    display: block;
+    width: 95vw;
+    margin: 0 auto;
 }
 
 .container:after {
@@ -62,8 +75,9 @@
 
 
 .header {
-    background: url('../assets/fanficpage/header_bg.png') #66cc00 repeat-x;
-    border-bottom: 1px solid #D8D8D8
+    background-color: #f34dff;
+    border-bottom: 1px solid #D8D8D8;
+    position: relative;
 }
 
 .header img {
@@ -71,7 +85,13 @@
     overflow-clip-margin: content-box;
     overflow: clip;
     border-radius: 3px;
-    margin-bottom: 20px;
+
+}
+
+.span-24, div.span-24 {
+    width: 1142px;
+    margin: 0!;
+    float: left;
 }
 
 .writing a {
@@ -80,9 +100,10 @@
 }
 
 .hdr_left {
+    margin: 0;
     float: left;
     width: 413px;
-    background: url('../assets/fanficpage/hdr_left_bg.png') #66cc00 no-repeat;
+    background-color: #f34dff;
 }
 
 .browsing {
@@ -91,7 +112,8 @@
 
 .logo-ff {
     float: left;
-    margin: 20px 0 0 50px;
+    width: 370px;
+    margin: 20px 0 0 20px;
     display: block;
 }
 
@@ -102,8 +124,8 @@
 
 .hdr_btn {
     float: left;
-    height: 20px;
-    background: url('../assets/fanficpage/button_bg.png') #333 repeat-x;
+    height: 18px;
+    background-color: #ffffff;
     padding: 3px 10px 7px 10px;
     font-weight: bold;
     border-radius: 9px;
@@ -111,7 +133,7 @@
     -webkit-border-radius: 9px;
     -moz-box-shadow: 3px 3px 3px #888;
     -webkit-box-shadow: 3px 3px 3px #888;
-    box-shadow: 3px 3px 3px #888;
+    box-shadow: 3px 3px 3px #68396b;
     display: block;
     unicode-bidi: isolate;
 }
@@ -167,20 +189,22 @@ a.login:link,a.login:visited,a.login:hover,a.login:active {
 
 .hdr_right {
     float: left;
-    width: 600px
+    width: auto;
+    position: relative;
 }
 
 .top_rt_hdr {
     float: left;
     height: 20px;
-    background: url('../assets/fanficpage/top_rt_header_bg.png') #a9e84e repeat-x;
+    background-color: #d53be0;
     padding: 15px 15px;
     border-bottom-left-radius: 5px;
     -moz-border-radius-bottomleft: 5px;
     -webkit-border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     -moz-border-radius-bottomright: 5px;
-    -webkit-border-bottom-right-radius: 5px
+    -webkit-border-bottom-right-radius: 5px;
+    box-shadow: 3px 3px 3px #68396b;
 }
 
 .top_rt_hdr ul {
@@ -200,6 +224,13 @@ a.login:link,a.login:visited,a.login:hover,a.login:active {
     color: #333
 }
 
+.header-pic {
+    float: left;
+    width: 200px;
+    vertical-align: bottom;
+    margin-top: 100px;
+}
+
 .search_form {
     float: left;
     margin: -7px 0 0 0
@@ -207,6 +238,249 @@ a.login:link,a.login:visited,a.login:hover,a.login:active {
 
 .search_field {
     width: 150px
+}
+
+.bubble-img {
+    position: absolute;
+    bottom: -130px; /* Adjust position to sit directly above the nav item */
+    left: 30%;
+    transform: translateX(-50%);
+    min-width: 280px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none; /* Ensure bubble does not interfere with clicks */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+
+  .nav-item {
+    position: relative; /* Position relative for positioning the bubble */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .nav-item img {
+    width: 24px; /* Set a fixed width for nav icons */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  ul.nav {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display as a flex container */
+    gap: 10px; /* Space out the list items */
+  }
+  
+
+a:link, a:visited, a:hover, a:active {
+    color: #39018e;
+    border: none;
+    text-decoration: none;
+}
+
+#nav li a:hover,#nav li a:focus {
+    background-color: #F6C739;
+    color: #FFF;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+.subnav_bar .fanfics {
+    display: none
+}
+
+.subnav_bar .popular {
+    display: none
+}
+
+.subnav_bar .users {
+    display: none
+}
+
+.subnav_bar .social {
+    display: none
+}
+
+.subnav_bar .show_fanfics {
+    display: inline
+}
+
+.subnav_bar .show_popular {
+    display: inline
+}
+
+.subnav_bar .show_users {
+    display: inline
+}
+
+.subnav_bar .show_social {
+    display: inline
+}
+
+.story_subnav table {
+    /* background-color: #c1d8ec; */
+    box-shadow: 1px 1px 5px #000000;
+}
+
+.story_subnav tr {
+    box-shadow: 0px 1px 1px #000000;
+}
+
+.story_subnav th {
+    vertical-align: top;
+}
+
+.story_subnav td {
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    vertical-align: top;
+} 
+
+.story_subnav h1 {
+    font-size: 14px;
+    margin-bottom: 3px;
+    color: #421b44;
+}
+
+.story_subnav img {
+    width: 100px;
+    box-shadow: 5px 5px 5px #888;
+}
+
+
+.story_subnav figure {
+    width: 100%;
+    margin: 3px 3px;
+}
+
+.story_subnav h3 {
+    font-size: 12px;
+    
+}
+
+.story_subnav p {
+    font-size: 11px;
+}
+
+.sidebar-more {
+    color: #d943e4;
+    text-shadow: #f34dff 0px 0px 10px;
+    font-weight: bold;
+}
+
+.sidebar-desc{
+    /* text-shadow: #f34dff 1px 0px 15px; */
+    color: #000000;
+    font-weight: bold;
+}
+
+.side-tags {
+    font-size: 10px;
+    color: #6b6a6a;
+}
+
+ul.alpha_nav {
+    list-style: none;
+    padding-left: 0px;
+    padding-bottom: 20px
+}
+
+ul.alpha_nav li {
+    float: left;
+    padding: 0 3px
+}
+
+ul.req_nav {
+    padding: 0 0 20px 0;
+}
+
+ul.req_nav li {
+    float: left;
+    padding-left: 20px;
+    list-style-type: none;
+    font-size: 15px;
+}
+
+ul.sort_nav {
+    padding: 0 0 10px 0;
+}
+
+ul.sort_nav li {
+    float: left;
+    padding-left: 10px;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.content {
+    background-color:white;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content div.user_list {
+    width: 130px;
+    float: right;
+    text-align: center;
+    margin: 0px 0;
+    font-size: 12px
+}
+
+.content div.user_list img {
+    margin: 0 auto
+}
+
+.content h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.login_grp {
+    float: left;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.search_form {
+    float: left;
+    margin: -7px 0 0 0
+}
+
+.search_field {
+    width: 150px
+}
+
+.login_box {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 280px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888
+}
+
+.textfield {
+    height: 23px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.submit_btn {
+    height: 28px;
+    padding: 0 19px;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    font-weight: bold;
+    color: #f34dff;
+    border: none
 }
 
 ul.nav {
@@ -315,4 +589,464 @@ ul.sort_nav li {
 
 .content div.user_list img {
     margin: 0 auto
+}
+
+.thirtythree_col {
+    float: left;
+    width: 33%
+}
+
+.pagination {
+    clear: both
+}
+
+.login_box {
+    float: left;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888
+}
+
+a.delete {
+    color: lightgray;
+    float: right;
+    width: 19px;
+    height: 19px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+a.delete:hover {
+    width: 19px;
+    height: 19px;
+    padding-bottom: 5px;
+    color: white;
+    background-color: #3B5998;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.wall_field textarea {
+    width: 500px
+}
+
+.story_subnav {
+    float: left;
+    width: 100%;
+    padding: 5px 5px 35px 5px
+}
+
+.story_subnav ul {
+    margin: 0 0 20px 0;
+    padding: 0
+}
+
+.story_subnav ul li {
+    margin-bottom: 5px;
+    font-size: 13px;
+    list-style-type: none
+}
+
+.story_subnav a:visited {
+    color:#0066cc;
+}
+
+.story_subnav a.current_link {
+    color: #252525;
+}
+
+.story_subnav a.edit_link {
+    color: green;
+    font-weight: normal;
+}
+
+.story_subnav a.delete_link {
+    color: red;
+    font-weight: normal;
+}
+
+.story_subnav .button a {
+    color: #fff
+}
+
+ul.visited_list {
+    margin: 0 0 20px 0;
+    padding: 0
+}
+
+ul.visited_list li {
+    margin-bottom: 5px;
+    font-size: 13px;
+    list-style-type: none
+}
+
+ul.blog_list,ul.story_list,ul.label_list {
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 160px
+}
+
+ul.story_list,ul.label_list {
+    padding: 0 6px
+}
+
+ul.blog_list li,ul.story_list li,ul.label_list li {
+    margin-bottom: 5px;
+    font-size: 12px;
+    list-style-type: none;
+    border-top: 1px solid #CCC;
+    padding: 10px 0 4px 0
+}
+
+ul.label_list li {
+    font-size: 15px
+}
+
+ul.blog_list li a:visited,ul.story_list li a:visited,ul.label_list li a:visited {
+    color: #999
+}
+
+.chapter-pic {
+    max-width: 40vw;
+}
+
+.menuNav {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.menuNav select {
+    width: 200px;
+    height: 25px;
+    background-color: #421b44;
+    color: white;
+    font-weight: bold
+}
+
+.prev_next_links {
+    text-align: center;
+}
+
+div.top_info {
+    float: left;
+    margin: 0 0 10px 0
+}
+
+.ff-chapter {
+    display: block;
+    margin-left: 30vw;
+    margin-right: 3vw;
+    text-align: justify;
+}
+
+.page_section,.announcement {
+    padding: 30px 30px 30px 30px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #888;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    box-shadow: 5px 5px 5px #888
+}
+
+.announcement {
+    padding: 15px
+}
+
+.featured_story {
+    /* background: url('/web/20120609095311im_/http://www.asianfanfics.com/img/featured_story_bg.png') #fff repeat-x */
+}
+
+div.ckeditor input[type=text] {
+    border: none;
+}
+
+.sidebar {
+    width: 200px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    background-color: white
+}
+
+.sidebar_module {
+    float: left;
+    text-align: center;
+    margin-top: 10px
+}
+
+.sidebar_module h3 {
+    margin: 10px 0
+}
+
+.span-5 {
+    width: 420px;
+    padding-right: 15px;
+    height: auto;
+}
+
+.login_page {
+    clear: both
+}
+
+.contact {
+    width: 566px;
+    float: left;
+}
+
+.user_alerts {
+    background-color: #333;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px
+}
+
+.user_alerts ul {
+    list-style: none;
+    margin: 0
+}
+
+.user_alerts ul li {
+    padding: 5px 0;
+    margin: 0
+}
+
+.user_alerts ul li a {
+    color: #ff6600;
+    font-weight: normal
+}
+
+a:link.friend,a:visited.friend,a:link.friend_title,a:visited.friend_title,span.friend {
+    color: #FF9966
+}
+
+a:hover.friend,a:active.friend,a:hover.friend_title,a:active.friend_title {
+    color: #0066cc
+}
+
+.friend:after {
+    content: ' [F]'
+}
+
+ul.messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+ul.messages li {
+    padding: 0 15px;
+    margin: 0
+}
+
+ul.messages li p {
+    padding: 10px 0px;
+    margin: 0;
+    border-bottom: 1px solid whitesmoke
+}
+
+.content_overflow {
+    overflow: auto;
+}
+
+a.tt {
+    position: relative;
+    z-index: 24;
+    color: #3CA3FF;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+a.tt span {
+    display: none;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+a.tt:hover {
+    z-index: 25;
+    color: #aaaaff;
+}
+
+a.tt:hover span.tooltip {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    padding: 15px 0 0 0;
+    width: 200px;
+    color: #222;
+    text-align: center;
+    filter: alpha(100);
+    opacity: 1.00;
+}
+
+a.tt:hover span.top {
+    display: block;
+    padding: 10px 8px 0;
+    background-color: white;
+    border-top: 1px solid #B8B8B8;
+    border-left: 1px solid #B8B8B8;
+    border-right: 1px solid #B8B8B8;
+}
+
+a.tt:hover span.middle {
+    display: block;
+    padding: 0 8px;
+    background-color: white;
+    border-left: 1px solid #B8B8B8;
+    border-right: 1px solid #B8B8B8;
+}
+
+a.tt:hover span.bottom {
+    display: block;
+    padding: 3px 8px 10px;
+    color: #548912;
+    background-color: white;
+    border-bottom: 1px solid #B8B8B8;
+    border-left: 1px solid #B8B8B8;
+    border-right: 1px solid #B8B8B8;
+}
+
+ul.tabnav {
+    text-align: left;
+    margin: 1em 0 1em 0;
+    font: bold 11px verdana,arial,sans-serif;
+    border-bottom: 1px solid #2C2C2C;
+    list-style-type: none;
+    padding: 3px 10px 6px 10px;
+}
+
+ul.tabnav li {
+    display: inline;
+}
+
+ul.tabnav li a {
+    padding: 6px 8px;
+    border: 1px solid #2C2C2C;
+    background-color: #2C2C2C;
+    color: #fff;
+    margin-right: 0px;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+ul.tabnav a.selected {
+    background-color: #336699;
+    border-color: #336699
+}
+
+ul.tabnav a:hover {
+    background: #224D6F;
+}
+
+.bright_alert,a.bright_alert {
+    color: #8B2500;
+}
+
+.bg_alert {
+    background-color: #8a1f11;
+}
+
+.error_bg {
+    background-color: #8a1f11;
+}
+
+.okay,a.okay {
+    color: green;
+}
+
+.karma {
+    color: #ff6600
+}
+
+.error_text,a.error_text {
+    color: #8a1f11;
+}
+
+.alert,a.alert {
+    color: #FF8C00;
+    font-weight: bold;
+}
+
+.required {
+    color: #C00;
+}
+
+.identify_user,a.identify_user {
+    color: orangered
+}
+
+.online_star {
+    color: #FF4500;
+    font-weight: bold;
+}
+
+a.delete_link {
+    color: red
+}
+
+.error,.notice,.success,.LV_invalid,.LV_valid {
+    padding: .6em .8em;
+    margin-bottom: 1em;
+    border: 2px solid #ddd;
+}
+
+.saved_msg,.autosaved_msg {
+    padding: 0 .8em
+}
+
+.saved_msg {
+    float: left;
+    margin-bottom: 5px
+}
+
+.autosaved_msg {
+    display: none
+}
+
+.error,.LV_invalid,.LV_invalid_field {
+    background: #FBE3E4;
+    color: #8a1f11;
+    border-color: #FBC2C4;
+}
+
+.comments .error p {
+    border: none;
+    padding: 0;
+}
+
+.notice {
+    background: #FFF6BF;
+    color: #514721;
+    border-color: #FFD324;
+}
+
+.success,.LV_valid {
+    background: #E6EFC2;
+    color: #264409;
+    border-color: #C6D880;
+}
+
+.error a {
+    color: #8a1f11;
+}
+
+.notice a {
+    color: #514721;
+}
+
+.success a {
+    color: #264409;
 }
