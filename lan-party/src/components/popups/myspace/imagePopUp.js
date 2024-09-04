@@ -3,7 +3,7 @@ import "./popUp.css";
 
 const ImagePopUp = ({ popUpTitle, imageUrl, onClose }) => {
     useEffect(() => {
-        const timer = setTimeout(onClose, 2500); 
+        const timer = setTimeout(onClose, 5000); 
         return () => clearTimeout(timer);
     }, [onClose]);
 

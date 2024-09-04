@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./FanficPage.css";
+import TextPopUp from "./popups/fanfic/textPopUp"
 import home from "../assets/fanficpage/Home Icon.png";
 import fanfics from "../assets/fanficpage/Book Icon.png";
 import buttonBg from "../assets/fanficpage/button_bg.png";
@@ -22,12 +23,51 @@ import navpopup4 from "../assets/fanficpage/Pop Up 4.png";
 import navpopup5 from "../assets/fanficpage/Pop Up 5.png";
 import headerPic from "../assets/fanficpage/headerpic.png";
 import chapterPic from "../assets/fanficpage/yuri.png";
+import banner from "../assets/fanficpage/banner.jpg";
+import compfp1 from "../assets/fanficpage/Shimurs.png";
+import compfp2 from "../assets/fanficpage/Mitsuki-Clam.png";
+import compfp3 from "../assets/fanficpage/Tomboytom89.png";
+import compfp4 from "../assets/fanficpage/Edwardluvr1234.png";
+import compfp5 from "../assets/fanficpage/Guest.png";
+import compfp6 from "../assets/fanficpage/Don't Lose Hope.png";
 
 
 const FanficPage = () => {
 
     const [isVisible, setIsVisible] = useState([false, false, false, false]);
     const [visibleBubble, setVisibleBubble] = useState(null);
+    const [showPopup, setShowPopup] = useState(false);
+    const [selectedChapter, setSelectedChapter] = useState("3"); // Default to "Chapter 4" value "6"
+    const [textContent, setTextContent] = useState("");
+    const [activePopupId, setActivePopupId] = useState(null);
+    const popupOffset = 3;
+
+    const handlePopupClick = (e, id) => {
+        setTextContent(textContent); 
+        if (e && e.preventDefault) {
+            e.preventDefault(); // Prevent page reload on form submission
+        }
+        setActivePopupId(id);
+    };
+    
+    const handlePopupClose = () => {
+        setActivePopupId(null);
+        setTextContent('');
+        setSelectedChapter("3"); 
+    };
+
+    const handlePopupInputChange = (e) => {
+        setTextContent(e.target.value);
+    };
+
+    const handlePopupSelectChange = (e) => {
+        const selectedValue = e.target.value; // Get the value of the selected option
+        setSelectedChapter(selectedValue);
+        // Optionally, handle other logic here (e.g., navigation or displaying a popup)
+        handlePopupClick(e, parseInt(selectedValue)); // Call your popup handler function
+    };
+    
+
 
     const handleClick = (index) => {
         // Show the bubble for the clicked <li> element
@@ -85,6 +125,45 @@ const FanficPage = () => {
             { id: 'users', href: '#', title: 'Users', imgSrc: users, bubbleImg: navpopup4 },
             { id: 'social', href: '#', title: 'Social', imgSrc: social, bubbleImg: navpopup5 },
         ];
+
+        const commentData = [
+            {
+                imgSrc: compfp1,
+                username: 'shimurs',
+                time: 'Nov 23, 2009 10:11PM',
+                content: '*-* I like this story keep updating <3',
+            },
+            {
+                imgSrc: compfp2,
+                username: 'Mitsuki-Clam',
+                time: 'Nov 23, 2009 10:11PM',
+                content: 'OMG LOVE IT! KONATA AND KAGAMI ARE SOOO CUTE MY OVAIRIES ARE EXPLODING!!! PLEASE KEEP WRITTING! I cant wait to see what happens next :D',
+            },
+            {
+                imgSrc: compfp3,
+                username: 'Tomboytom89',
+                time: 'Nov 23, 2009 10:11PM',
+                content: 'This story doesn\'t make any sense, I recommend you stop it, before someone curse you for put your homo fantasies with fictional characters, online.',
+            },
+            {
+                imgSrc: compfp4,
+                username: 'edwardluvr1234',
+                time: 'Nov 23, 2009 10:11PM',
+                content: 'My best friend, everyone :3',
+            },
+            {
+                imgSrc: compfp5,
+                username: 'Guest',
+                time: 'Nov 23, 2009 10:11PM',
+                content: 'Don’t click chapter 5 …',
+            },
+            {
+                imgSrc: compfp6,
+                username: '♥ لا تفقد الأمل',
+                time: 'Nov 23, 2009 10:11PM',
+                content: 'This story brings me such comfort during a very hard time in my life and in my country right now, please, if you have time, look at what is happening bit.ly/30ba2l',
+            },
+        ]
  
     return (
         <div className="fanfic-body">
@@ -136,12 +215,14 @@ const FanficPage = () => {
                                     <li>|</li>
                                     <li><a href="#" title="About">About</a></li>
                                 </ul>
-                                <form action="#" id="cse-search-box" className="search_form">
+                                <form action="#" id="cse-search-box" className="search_form" onSubmit={(e) => handlePopupClick(e, 1)}>
                                     <input type="hidden" name="cx" value="partner-pub-8482723550199408:wfkhzi-cpj7"/>
                                     <input type="hidden" name="cof" value="FORID:10"/>
                                     <input type="hidden" name="ie" value="ISO-8859-1"/>
-                                    <input type="text" className="search_field" name="q" size="40"/> <input className="submit_btn" type="submit" name="sa" value="Search"/>
+                                    <input type="text" className="search_field" name="q" size="40" value={textContent} onChange={handlePopupInputChange}/> 
+                                    <input className="submit_btn" type="submit" name="sa" value="Search"/>
                                 </form>
+                                {activePopupId === 1 && <TextPopUp popUpTitle="Search" textContent={`Oopsie! ${textContent} does not exist :/`} onClose={handlePopupClose} />}
                             </div>
                     
                             <ul className="nav" id="nav">
@@ -154,7 +235,7 @@ const FanficPage = () => {
                                 >
                                 <a href={item.href} title={item.title}>
                                     <img src={item.imgSrc} alt={item.title} />
-                                    {item.title}
+                                    <span>{item.title}</span>
                                 </a>
                                 {visibleBubble === index && (
                                     <img
@@ -190,7 +271,7 @@ const FanficPage = () => {
             <div class="container">
             <div class="span-5 sidebar">
                 <div class="login_box">
-                        <form method="post" action="#">
+                        <form>
                             <input type="text" name="username" value="Username" className="textfield" size="20" maxlength="50"/><br/>
                             {/* ="margin-top:3px" */}
                             <input type="password" name="password" value="Password" class="textfield" size="20" maxlength="50"/><br/>
@@ -226,6 +307,9 @@ const FanficPage = () => {
                             </tr>
                         ))}
                         </table>
+                            <div className='banner'>
+                            <img src={banner}></img>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -233,7 +317,7 @@ const FanficPage = () => {
                         <div class="span-19 last">
                          {/* margin-top:35px;background-color:white;padding:20px */}
                             <div class="content">
-                                <h1 class="story" name="story_title">No Ordinary Love</h1>
+                                <h1 class="story_title" name="story_title">Chapter 4: Never Sick of You</h1>
                                     <p>
                                         by <strong><a href="#">starahhsan12</a></strong>
                                         <br/>
@@ -252,15 +336,16 @@ const FanficPage = () => {
                                     <img className="chapter-pic" src={chapterPic}></img>
                         
                                     <div class="menuNav">
-                                    <select name="chapterNav" onchange="document.location = this.value">
+                                    <select name="chapterNav" value={selectedChapter} onChange={(e) => handlePopupSelectChange(e)}>
                                     ?&gt;
-                                        <option value="#">Foreword</option>
-                                        <option value="#">Chapter 1</option>
-                                        <option value="#">Chapter 2</option>
-                                        <option value="#">Chapter 3</option>
-                                        <option value="#"selected="selected">Chapter 4</option>
+                                        <option value="2">Foreword</option>
+                                        <option value="2">Chapter 1</option>
+                                        <option value="2">Chapter 2</option>
+                                        <option value="2">Chapter 3</option>
+                                        <option value="3"selected="selected">Chapter 4</option>
                                         <option value="#">Chapter 5</option>
                                     </select>
+                                    {activePopupId === 2 && <TextPopUp popUpTitle="Link is Dead" textContent="Link is dead. You can’t go back that far."  onClose={handlePopupClose} />}
                                 </div>
                                 <div className='ff-chapter'>
                                     <p>Kagami was sweating like crazy in class the next day, she couldn’t stop thinking about that blue-haired demon. All because Konata asked her that damned question:<br/><br/>
@@ -303,6 +388,39 @@ const FanficPage = () => {
 
                                     The girls decided to ditch school together, spending the day laughing and chatting, as close as ever before. There was no tension even after the way they left things yesterday, the conversation never even came up. In the end, Kagami decided that it didn’t really matter what they were—best friends, more than friends, or whatever. As long as they were together, like they were right now, that was enough for her. Maybe someday, she’d figure out what all these strange feelings meant. But for now, she was happy just being with Konata, laughing, going crazy, and maybe blushing a little too. <br/><br/>
                                     </p>
+                                </div>
+                                <div className="comment-section">
+                                    <h1> comments</h1>
+                                    <table>
+                                        {commentData.map((data, index) => (
+                                            <React.Fragment key={index}>
+                                            <tr key={index}>
+                                                <th scope="row">
+                                                    <figure>
+                                                    <img src={data.imgSrc} alt={data.username} onClick={(e) => handlePopupClick(e, (index+popupOffset))} />
+                                                    </figure>
+                                                </th>
+                                                <td>
+                                                    <h3 className="comment-h3">
+                                                        <a href="#" className="comment-username" onClick={(e) => handlePopupClick(e, (index+popupOffset))} >{data.username}</a> 
+                                                        <span className="comment-time">{data.time}</span>
+                                                    </h3>
+                                                    <p className="comment-content">{data.content}</p>
+                                                </td>
+                                            </tr>
+                                            {activePopupId === (index+popupOffset) && (
+                                                <TextPopUp 
+                                                  popUpTitle="comments" 
+                                                  textContent={`Oopsie! ${data.username} no longer exists :/`} 
+                                                  onClose={handlePopupClose} 
+                                                />
+                                              )}
+                                         </React.Fragment>
+                                        ))}
+                                    </table>
+                                </div>
+                                <div className="chapter5">
+                                    <a>&gt;&gt;&gt; Next Chapter...</a>
                                 </div>
                             </div>
                         </div>

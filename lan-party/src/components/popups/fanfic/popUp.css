@@ -1,0 +1,91 @@
+.popup {
+    position: absolute;
+    width: 400px;
+    border: 2px solid #a9a9a9;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 0;
+    position: fixed; /* Keep the modal fixed relative to the viewport */
+    top: 50%; /* Start positioning from the vertical center */
+    right: 50%; /* Start positioning from the horizontal center */
+    transform: translate(50%, -50%); /* Adjust to center correctly */
+  }
+
+  .system-popup {
+    position: absolute;
+    width: 500px;
+    border: 2px solid #a9a9a9;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 0;
+  }
+  
+  .popup-header {
+    background-image: linear-gradient(to right, #0a256a, #a4c8ef);
+    height: 20px;
+    position: relative;
+    border-bottom: 1px solid #a9a9a9;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5px;
+  }
+  
+  .close-button {
+    background-color: #d4d0c8;
+    border: 1px solid #808080;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .close-button:hover {
+    color: #f00;
+  }
+  
+  .popup-text {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align: center;
+    font-size: 18px;
+    background-color: #f4f2ea;
+    margin: 0;
+  }
+
+  .popup-title {
+    font-family: arial;
+    display: inline;
+    float: left;
+    color: #fff;
+    float: left;
+  }
+
+  .popup-footer {
+    background-color: #d4d0c8;
+    padding: 7px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #a9a9a9;
+  }
+  
+  .footer-button {
+    background-color: #d4d0c8;
+    border: 1px solid #808080;
+    color: #000;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 12px;
+    padding: 2px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
