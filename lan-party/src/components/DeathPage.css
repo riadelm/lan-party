@@ -1,0 +1,34 @@
+.death-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    width: 100%;
+    overflow:hidden;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.button {
+    position: absolute;
+    width: 94%;
+    left: 0;
+    top: 0;
+    transform: translate(3%, -3%);
+    clip-path: url(#image-mask); 
+    transition: 0.4s;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+.button:hover {
+    filter: drop-shadow(rgb(255, 255, 255) 0px 0px 3px);
+}

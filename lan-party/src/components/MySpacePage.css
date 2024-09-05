@@ -160,6 +160,7 @@ Search Bar
     background-color: rgb(102, 153, 204);
     height: 20px;
     font-size: 9px;
+    list-style-type: none;
   }
 
   .navbar ul {
@@ -167,6 +168,7 @@ Search Bar
     margin: 0 auto;
     padding: 0;
     text-size-adjust: 80%;
+    list-style-type: none;
   }
   
   .navbar li::after {

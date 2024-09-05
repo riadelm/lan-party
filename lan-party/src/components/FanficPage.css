@@ -843,7 +843,7 @@ div.top_info {
     float: right;
     margin-top: 10vh;
     font-weight: 100;
-    font-size: 16px;
+    font-size: 20px;
     transition: 0.5s;
     color: #d943e4;
     text-shadow: #f34dff 0px 0px 10px;
@@ -852,7 +852,7 @@ div.top_info {
 
 .chapter5:hover {
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     color: #5b1a60;
 }
 .featured_story {

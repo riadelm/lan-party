@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./FanficPage.css";
 import TextPopUp from "./popups/fanfic/textPopUp"
 import home from "../assets/fanficpage/Home Icon.png";
@@ -33,6 +34,12 @@ import compfp6 from "../assets/fanficpage/Don't Lose Hope.png";
 
 
 const FanficPage = () => {
+
+    const navigate = useNavigate();
+
+    const navigateTo = (path) => {
+        navigate(path); 
+    };
 
     const [isVisible, setIsVisible] = useState([false, false, false, false]);
     const [visibleBubble, setVisibleBubble] = useState(null);
@@ -136,31 +143,31 @@ const FanficPage = () => {
             {
                 imgSrc: compfp2,
                 username: 'Mitsuki-Clam',
-                time: 'Nov 23, 2009 10:11PM',
+                time: 'Nov 27, 2009 2:41AM',
                 content: 'OMG LOVE IT! KONATA AND KAGAMI ARE SOOO CUTE MY OVAIRIES ARE EXPLODING!!! PLEASE KEEP WRITTING! I cant wait to see what happens next :D',
             },
             {
                 imgSrc: compfp3,
                 username: 'Tomboytom89',
-                time: 'Nov 23, 2009 10:11PM',
+                time: 'Nov 27, 2009 11:38AM',
                 content: 'This story doesn\'t make any sense, I recommend you stop it, before someone curse you for put your homo fantasies with fictional characters, online.',
             },
             {
                 imgSrc: compfp4,
                 username: 'edwardluvr1234',
-                time: 'Nov 23, 2009 10:11PM',
+                time: 'Nov 28, 2009 9:30PM',
                 content: 'My best friend, everyone :3',
             },
             {
                 imgSrc: compfp5,
                 username: 'Guest',
-                time: 'Nov 23, 2009 10:11PM',
+                time: 'Dec 6, 2009 6:06PM',
                 content: 'Don’t click chapter 5 …',
             },
             {
                 imgSrc: compfp6,
                 username: '♥ لا تفقد الأمل',
-                time: 'Nov 23, 2009 10:11PM',
+                time: 'Dec 11, 2009 6:32PM',
                 content: 'This story brings me such comfort during a very hard time in my life and in my country right now, please, if you have time, look at what is happening bit.ly/30ba2l',
             },
         ]
@@ -420,7 +427,7 @@ const FanficPage = () => {
                                     </table>
                                 </div>
                                 <div className="chapter5">
-                                    <a>&gt;&gt;&gt; Next Chapter...</a>
+                                    <a onClick={() => navigateTo('/death')}>&gt;&gt;&gt; Next Chapter...</a>
                                 </div>
                             </div>
                         </div>

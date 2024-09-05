@@ -1,0 +1,72 @@
+
+.sh-container {
+    height: 100%;
+    width: 100%;
+    /* background-image: url(../assets/death/suicideroom.jpg);
+    background-repeat: none;
+    background-size: cover; */
+    background-color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+
+.sh-table-content {
+    padding-top: 5vh;
+    width: 1000px;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sh-table-content table {
+    filter: drop-shadow(rgb(255, 255, 255) 0px 0px 3px);
+}
+
+.sh-table-content figure {
+    margin: 0;
+    width: 100%;
+}
+
+.sh-table-content img {
+    width: 80%;
+}
+
+.sh-table-content td {
+    background-color: white;
+}
+
+.sh-date-col {
+    background-color: white;
+    width: 80px;
+}
+
+.sh-image-col {
+    width: 100px;
+    border: 3px solid black;
+    padding: 3px;
+}
+
+.sh-content-col {
+    border: 3px solid black;
+}
+
+.sh-date-col {
+    width: 80px;
+    border: 3px solid black;
+}
+
+.sh-content {
+    font-size: 12px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    color: red;
+}
+
+.sh-date {
+    font-size: 12px;
+    text-decoration: underline;
+    color: red;
+    font-weight: bold;
+}
+
+
