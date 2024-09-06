@@ -24,11 +24,7 @@
 
 .sh-table-content figure {
     margin: 0;
-    width: 100%;
-}
-
-.sh-table-content img {
-    width: 80%;
+    width: 200px;
 }
 
 .sh-table-content td {
@@ -40,10 +36,12 @@
     width: 80px;
 }
 
-.sh-image-col {
-    width: 100px;
-    border: 3px solid black;
+.sh-image {
+    width: 100%;
     padding: 3px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    cursor: pointer;
 }
 
 .sh-content-col {
@@ -51,7 +49,7 @@
 }
 
 .sh-date-col {
-    width: 80px;
+    width: 50px;
     border: 3px solid black;
 }
 
@@ -70,3 +68,53 @@
 }
 
 
+.pagination-button {
+    background-color: #dcdcdc;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 0px #fff inset, -1px -1px 0px #666 inset;
+    padding: 5px 10px;
+    margin: 0 10px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .pagination-button:active {
+    box-shadow: 2px 2px 0px #666 inset, -1px -1px 0px #fff inset;
+  }
+  
+  .pagination-button:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: 2px 2px 0px #ddd inset, -1px -1px 0px #eee inset;
+  }
+  
+  /* Centered page numbers */
+  .pagination-pages {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    display: inline-block;
+  }
+  
+  .pagination-number {
+    margin: 0 5px;
+    padding: 3px 5px;
+    background-color: #fff;
+    border: 1px solid #999;
+    box-shadow: 1px 1px 0px #ccc inset, -1px -1px 0px #fff inset;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .pagination-dots {
+    margin: 0 5px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+  }
+
+  .pagination-bar {
+    margin-right: auto;
+    margin-left: auto;
+  }

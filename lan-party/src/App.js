@@ -5,6 +5,7 @@ import MySpacePage from "./components/MySpacePage";
 import FanficPage from "./components/FanficPage";
 import DeathPage from "./components/DeathPage";
 import SuicidePage from "./components/SuicidePage";
+import GorePage from "./components/GorePage";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/love" element={<FanficPage />} />
         <Route path="/death" element={<DeathPage />} />
         <Route path="/suicide" element={<SuicidePage />} />
-        <Route path="/gore" element={<FanficPage />} />
+        <Route path="/gore" element={<GorePage />} />
         <Route path="/sex" element={<FanficPage />} />
         <Route path="/identity" element={<FanficPage />} />
       </Routes>

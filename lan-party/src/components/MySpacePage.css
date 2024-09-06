@@ -98,6 +98,7 @@ Search Bar
   
   .search-bar form {
     justify-self: center;
+    display: inline-block;
     margin: 0;
   }
   
@@ -114,13 +115,14 @@ Search Bar
   }
 
   .myspace-header-img {
-    display: inline;
+    position: relative;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     padding: 2vh;
     width: 40vw;
     margin-bottom: -19%;
-    margin-right: -19%;
+
   }
 
   .page-content-container {
@@ -437,6 +439,15 @@ Blurbs
     margin: 0;
     font-size: 9pt;
     margin-left: 15px;
+  }
+
+  .blurbs a {
+    color: #f000e0;
+  }
+
+  .to-ff:hover {
+    filter: drop-shadow(red 0px 0px 3px);
+    color: #f000e0;
   }
   
   .blurbs p:nth-of-type(5) {

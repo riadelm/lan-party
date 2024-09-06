@@ -16,7 +16,7 @@
     z-index: 1;
 }
 
-.button {
+/* .button {
     position: absolute;
     width: 94%;
     left: 0;
@@ -26,6 +26,19 @@
     transition: 0.4s;
     cursor: pointer;
     z-index: 1000;
+} */
+
+.button {
+    clip-path: url(#image-mask); 
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100vh;
+    cursor: pointer;
+    transform: translateX(-4%);
+    transition: 0.4s;
 }
 
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./MySpacePage.css";
 import ImagePopUp from "./popups/myspace/imagePopUp"
 import SystemPopUp from "./popups/myspace/systemPopUp"
@@ -42,7 +43,6 @@ import popupimgsys1 from "../assets/myspacepage/warning message cropped.png"
 
 
 
-
 const MySpacePage = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [imageUrl, setImageUrl] = useState("");
@@ -55,11 +55,18 @@ const MySpacePage = () => {
     const handleClose = () => {
         setActivePopupId(null);
     };
+
+    const navigate = useNavigate();
+
+    const navigateTo = (path) => {
+        navigate(path); 
+    };
+
     return (
         <div className="myspace-body">
         <img className="myspace-header-img" src={searchBar}></img>
         <nav class="search-bar">
-            <form>
+            {/* <form>
                 <label>
                     The Web
                     <input type="radio" name="search-type" value="the-web"></input>
@@ -75,7 +82,7 @@ const MySpacePage = () => {
                 </label>
 
                 <input className="submit-btn" type="submit" name="submit-button" value="Search"></input>
-            </form>
+            </form> */}
         </nav>
         <nav className="navbar">
             <ul>
@@ -224,9 +231,9 @@ const MySpacePage = () => {
 
                             <p>i have two older brothers and a little sister who is sooo annoying!! I can’t wait to live on my own and not be bothered by anyone evarr</p>
 
-                            <p>i am a writer and i update my fic <a href="#">STARS ABOVE</a> every wednesday on fanfiction.net, its mostly kagami x konata yuri fluff but with some cross over stuff too okaiiiiiii byeee i hope you check it out ヾ(☆▽☆) ✿✿✿✿✿✿</p>
+                            <p>i am a writer and i update my fic <a className="to-ff" href="#">STARS ABOVE</a> every wednesday on fanfiction.net, its mostly kagami x konata yuri fluff but with some cross over stuff too okaiiiiiii byeee i hope you check it out ヾ(☆▽☆) ✿✿✿✿✿✿</p>
 
-                            <h3>CHAPTER 4 COMING SOOONZ(๑´&gt;᎑&lt;)~*</h3>
+                            <h3 className="to-ff">CHAPTER 4 COMING SOOONZ(๑´&gt;᎑&lt;)~*</h3>
                             <p>thanks soo much for the support <b>I LOVE YOU ALL</b></p>
                             <img className="footer-gif" src={footerGif}></img>
                         </section>
