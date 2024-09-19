@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./FanficPage.css";
 import TextPopUp from "./popups/fanfic/textPopUp"
@@ -34,6 +34,11 @@ import compfp6 from "../assets/fanficpage/Don't Lose Hope.png";
 
 
 const FanficPage = () => {
+
+    useEffect(() => {
+        // Scroll to top of the page when component is mounted
+        window.scrollTo(0, 0);
+    }, []);
 
     const navigate = useNavigate();
 
@@ -168,7 +173,8 @@ const FanficPage = () => {
                 imgSrc: compfp6,
                 username: '♥ لا تفقد الأمل',
                 time: 'Dec 11, 2009 6:32PM',
-                content: 'This story brings me such comfort during a very hard time in my life and in my country right now, please, if you have time, look at what is happening bit.ly/30ba2l',
+                content: 'This story brings me such comfort during a very hard time in my life and in my country right now, please, if you have time, look at what is happening',
+                link: 'bit.ly/30ba2l',
             },
         ]
  
@@ -413,6 +419,14 @@ const FanficPage = () => {
                                                         <span className="comment-time">{data.time}</span>
                                                     </h3>
                                                     <p className="comment-content">{data.content}</p>
+                                                    {data.link && (
+                                                        <span 
+                                                            style={{ color: '#0000EE', cursor: 'pointer', textDecoration: 'underline' }} 
+                                                            onClick={() => navigateTo('/death')}
+                                                        >
+                                                            {data.link}
+                                                        </span>
+                                                    )}
                                                 </td>
                                             </tr>
                                             {activePopupId === (index+popupOffset) && (

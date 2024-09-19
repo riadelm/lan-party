@@ -17,6 +17,8 @@
   a {
     font-weight: bold;
     text-decoration: none;
+    color: #0000EE;
+    cursor: pointer;
   }
 
   h1 {
@@ -386,6 +388,7 @@ Main
   
   .main-header a:visited {
     color: #ffffff;
+    cursor: pointer;
   }
   
   .user-network h2{
@@ -448,6 +451,18 @@ Blurbs
   .to-ff:hover {
     filter: drop-shadow(red 0px 0px 3px);
     color: #f000e0;
+    cursor: pointer;
+  }
+
+  .fanfic-link {
+    font-size: 14px;
+    color: #003399;
+    display: block;
+    object-fit: contain;
+  }
+
+  #add-comment {
+    font-size: large;
   }
   
   .blurbs p:nth-of-type(5) {

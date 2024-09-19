@@ -27,6 +27,7 @@
   
   .click-button:hover {
     box-shadow: 0 0 15px 15px red;
+    cursor: pointer;
   }
   
   .click-button:active {

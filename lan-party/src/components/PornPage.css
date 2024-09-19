@@ -1,0 +1,127 @@
+/* Container to hold the layout */
+.porn-container {
+    display: flex;
+    width: 100%; /* Full viewport height */
+    background-color: rgb(187, 0, 0);
+  }
+  
+  /* Sidebar styles */
+  .prn-sidebar {
+    width: 20%; /* Adjust the width as needed */
+    /* background-color: #f0f0f0; */
+    height: 100vh;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: rgb(187, 0, 0);
+    margin-top: 0;
+    position: sticky;
+    top: 0;
+  }
+  
+  .left {
+    border-right: 2px solid #ccc; /* Optional border for separation */
+  }
+  
+  .right {
+    border-left: 2px solid #ccc; /* Optional border for separation */
+  }
+  
+  /* Main content styles */
+  .prn-main-content {
+    flex: 1; /* This will make the middle section take up remaining space */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allows scrolling if content exceeds screen height */
+    background-color: rgb(187, 0, 0);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prn-logo {
+    width: calc(100% + 40px);
+    padding-bottom: 2vh;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 20px; 
+    object-fit: contain;
+  }
+
+  .prn-logo img {
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .prn-logo h1 {
+    text-align: center;
+    margin-top: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: underline;
+    color: rgb(218, 218, 21);
+    text-shadow: 1px 2px 0 #0000ff; 
+    cursor: pointer;
+  }
+
+  .side-gif {
+    width: 100%;
+  }
+
+  .content-columns {
+    display: flex;
+    width: 100%; /* Full width for both columns together */
+  }
+  
+  /* Individual column styles */
+  .column {
+    flex: 1; /* Make both columns take equal width */
+    padding: 0px 20px 20px 20px;
+    box-sizing: border-box;
+    width: 50%
+  }
+
+  .thumbnail-pic {
+    width: 100%;
+    transition: all 0.7s;
+  }
+
+  .thumbnail-pic:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+
+
+  .thumbnail-container h1 {
+    margin-top: 0;
+    margin-bottom: 2vh;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(218, 218, 21);
+    text-shadow: 1px 2px 0 #0000ff; 
+    font-weight: 200;
+    font-size: 13px;
+  }
+  
+  .dancer {
+    position: fixed;
+    top: 0;
+    height: 70%;
+    width: auto;
+    z-index: 999;
+  }
+
+  .dancer img {
+    width: 100%;
+    transition: opacity 1s ease-in-out; 
+  }
+
+.fade-in {
+    opacity: 1; /* GIF is visible */
+}
+
+.fade-out {
+    opacity: 0; /* GIF is fading out */
+}
+  

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ImagePixelated } from 'react-pixelate';
+import { useNavigate } from 'react-router-dom';
 import './homepage.css';
 import images from './utils/importAllHomepageImages';
 import clickImage from './assets/homepage/buttons/click.png'
@@ -31,6 +32,12 @@ function HomePage() {
   const [rotateImages, setRotateImages] = useState(true);
   const containerRef = useRef(null);
   const pixelatedImageRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  const navigateTo = (path) => {
+      navigate(path); 
+  };
 
   useEffect(() => {
     if (rotateImages) {
@@ -115,14 +122,15 @@ function HomePage() {
                             setShowLoading5(false);
                             setShowCustomCursor(false);
                             setRotateImages(true);
-                        }, 8000);
-                    }, 18000); // show full loading image for 5 seconds
-                }, 8000); // show full loading image for 5 seconds
-            }, 8000); // show third for 3 more seconds while removing second loading gif
-          }, 4500); // Show third loading gif for 7 seconds
-        }, 12000); // Show second loading gif for 6 seconds
-      }, 7000); // Show first loading gif for 3 seconds
-    }, 1000); // Keep pixelSize 50 for 2 seconds
+                            navigateTo('/friendship')
+                        }, 4000); // 8 seconds
+                    }, 9000); // show full loading image for 18 seconds
+                }, 4000); // show full loading image for 8 seconds
+            }, 4000); // show third for 8 more seconds while removing second loading gif
+          }, 3000); // Show third loading gif for 4.5 seconds
+        }, 6000); // Show second loading gif for 12 seconds
+      }, 6000); // Show first loading gif for 7 seconds
+    }, 1000); // Keep pixelSize 50 for 1 seconds
   };
 
   useEffect(() => {

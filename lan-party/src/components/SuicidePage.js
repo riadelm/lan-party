@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./SuicidePage.css";
 import background from "../assets/death/suicideroom.jpg"
 import shpfp1 from "../assets/death/self harm 3.jpg";
-import shpfp2 from "../assets/death/self harm 1.jpg";
-import shpfp3 from "../assets/death/self harm 2.jpeg";
-import shpfp4 from "../assets/death/self harm 3.jpg";
-import shpfp5 from "../assets/death/emptysh.png";
 import shpfp6 from "../assets/death/self harm 6.jpg";
-import shpfp7 from "../assets/death/self harm 9.jpg";
+
 
 const SuicidePage = () => {
+
+    useEffect(() => {
+        // Scroll to top of the page when component is mounted
+        window.scrollTo(0, 0);
+    }, []);
 
     const navigate = useNavigate();
 

@@ -1,0 +1,35 @@
+/* Container for the scrolling text */
+.scrolling-text-container {
+    margin-top: 25vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 50px; /* Adjust based on your needs */
+    background-color: transparent;
+    z-index: 1000; /* Ensures it's on top */
+    direction: rtl;
+    text-align: left;
+  }
+  
+  /* Scrolling text */
+  .scrolling-text {
+    position: relative;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 32px;
+    display: inline-block;
+    color: #ffffffb9; /* Text color */
+    animation: slideText 150s linear infinite;
+  }
+  
+  @keyframes slideText {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  

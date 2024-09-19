@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect }from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./DeathPage.css";
 import death from "../assets/death/Death Image rough.png";
 import wound from "../assets/death/Scar Remodeled.png";
 
 const DeathPage = () => {
+
+    useEffect(() => {
+        // Scroll to top of the page when component is mounted
+        window.scrollTo(0, 0);
+    }, []);
+    
     const navigate = useNavigate();
 
     const navigateTo = (path) => {

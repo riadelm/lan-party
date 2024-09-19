@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./MySpacePage.css";
 import ImagePopUp from "./popups/myspace/imagePopUp"
@@ -44,6 +44,12 @@ import popupimgsys1 from "../assets/myspacepage/warning message cropped.png"
 
 
 const MySpacePage = () => {
+
+    useEffect(() => {
+        // Scroll to top of the page when component is mounted
+        window.scrollTo(0, 0);
+    }, []);
+
     const [showPopup, setShowPopup] = useState(false);
     const [imageUrl, setImageUrl] = useState("");
     const [activePopupId, setActivePopupId] = useState(null);
@@ -152,7 +158,7 @@ const MySpacePage = () => {
                         </section>
                         
                         <section className="myspace-url-box">
-                        <h3 className="fanfic-link"><b><a href="https://www.fanfiction.net/">https://www.fanfiction.net/</a></b></h3>
+                        <h3 className="fanfic-link"><b><a className="to-ff fanfic-link" onClick={() => navigateTo('/love')}>https://www.animeyurifanfics.net/stars-above</a></b></h3>
                         </section>
 
                     <section className="details">
@@ -231,10 +237,10 @@ const MySpacePage = () => {
 
                             <p>i have two older brothers and a little sister who is sooo annoying!! I can’t wait to live on my own and not be bothered by anyone evarr</p>
 
-                            <p>i am a writer and i update my fic <a className="to-ff" href="#">STARS ABOVE</a> every wednesday on fanfiction.net, its mostly kagami x konata yuri fluff but with some cross over stuff too okaiiiiiii byeee i hope you check it out ヾ(☆▽☆) ✿✿✿✿✿✿</p>
+                            <p>i am a writer and i update my fic <a className="to-ff" onClick={() => navigateTo('/love')}>STARS ABOVE</a> every wednesday on fanfiction.net, its mostly kagami x konata yuri fluff but with some cross over stuff too okaiiiiiii byeee i hope you check it out ヾ(☆▽☆) ✿✿✿✿✿✿</p>
 
-                            <h3 className="to-ff">CHAPTER 4 COMING SOOONZ(๑´&gt;᎑&lt;)~*</h3>
-                            <p>thanks soo much for the support <b>I LOVE YOU ALL</b></p>
+                            <h3 className="to-ff" onClick={() => navigateTo('/love')}>CHAPTER 4 COMING SOOONZ(๑´&gt;᎑&lt;)~*</h3>
+                            <p>thanks soo much for the support <b className="to-ff" onClick={() => navigateTo('/love')}>I LOVE YOU ALL</b></p>
                             <img className="footer-gif" src={footerGif}></img>
                         </section>
 
@@ -507,7 +513,7 @@ const MySpacePage = () => {
                             </tr>
                         </table>
 
-                        <p id="add-comment"><a href="#">Add Comment</a></p>
+                        <p id="add-comment"><a className="to-ff" onClick={() => navigateTo('/love')}>Add Comment</a></p>
 
                         </section>
 

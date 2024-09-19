@@ -845,15 +845,20 @@ div.top_info {
     font-weight: 100;
     font-size: 20px;
     transition: 0.5s;
-    color: #d943e4;
     text-shadow: #f34dff 0px 0px 10px;
     font-family:cursive;
+    transition: 0.4s;
 }
 
-.chapter5:hover {
+.chapter5 a {
+    color: #d943e4;
+}
+
+.chapter5 a:hover {
     cursor: pointer;
     font-size: 20px;
-    color: #5b1a60;
+    color: red;
+    text-shadow: red 0px 0px 10px;
 }
 .featured_story {
     /* background: url('/web/20120609095311im_/http://www.asianfanfics.com/img/featured_story_bg.png') #fff repeat-x */

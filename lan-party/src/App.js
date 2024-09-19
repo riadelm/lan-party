@@ -6,6 +6,8 @@ import FanficPage from "./components/FanficPage";
 import DeathPage from "./components/DeathPage";
 import SuicidePage from "./components/SuicidePage";
 import GorePage from "./components/GorePage";
+import PornPage from "./components/PornPage";
+import IdentityPage from "./components/IdentityPage";
 
 function App() {
   return (
@@ -17,8 +19,8 @@ function App() {
         <Route path="/death" element={<DeathPage />} />
         <Route path="/suicide" element={<SuicidePage />} />
         <Route path="/gore" element={<GorePage />} />
-        <Route path="/sex" element={<FanficPage />} />
-        <Route path="/identity" element={<FanficPage />} />
+        <Route path="/sex" element={<PornPage />} />
+        <Route path="/identity" element={<IdentityPage />} />
       </Routes>
     </Router>
   );

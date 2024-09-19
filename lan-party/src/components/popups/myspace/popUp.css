@@ -7,6 +7,10 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     padding: 0;
+    position: fixed; /* Keep the modal fixed relative to the viewport */
+    top: 50%; /* Start positioning from the vertical center */
+    right: 50%; /* Start positioning from the horizontal center */
+    transform: translate(50%, -50%); /* Adjust to center correctly */
   }
 
   .system-popup {
@@ -18,6 +22,18 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     padding: 0;
+    position: fixed; /* Keep the modal fixed relative to the viewport */
+    top: 50%; /* Start positioning from the vertical center */
+    right: 50%; /* Start positioning from the horizontal center */
+    transform: translate(50%, -50%); /* Adjust to center correctly */
+  }
+
+  .popup-title {
+    font-family: arial;
+    display: inline;
+    float: left;
+    color: #fff;
+    float: left;
   }
   
   .popup-header {
