@@ -23,10 +23,14 @@
     width: 30vw; /* 30% of the screen width */
     z-index: 2;
     cursor: pointer;
-    transition: transform 0.4s;
+    
   }
   
   .middle-png:hover {
     transform: translate(-50%, -50%) scale(1.1);
     filter: drop-shadow(rgb(255, 255, 255) 0px 0px 3px);
   }
+
+  .non-clickable {
+    pointer-events: none;
+}

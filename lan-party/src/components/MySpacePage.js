@@ -70,7 +70,7 @@ const MySpacePage = () => {
 
     return (
         <div className="myspace-body">
-        <img className="myspace-header-img" src={searchBar}></img>
+        {/* <img className="myspace-header-img" src={searchBar}></img> */}
         <nav class="search-bar">
             {/* <form>
                 <label>

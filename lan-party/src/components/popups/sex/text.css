@@ -1,6 +1,6 @@
 /* Container for the scrolling text */
 .scrolling-text-container {
-    margin-top: 25vh;
+    margin-top: 10vh;
     position: fixed;
     top: 0;
     left: 0;

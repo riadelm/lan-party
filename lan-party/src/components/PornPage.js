@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./PornPage.css";
+import LoadingScreen from "./popups/loading/loading"
 import ScrollingText from './popups/sex/text';
+import ImagePopUp from "./popups/sex/imagePopUp"
+import WebcamPopup from "./popups/sex/webcam"
 import logo from "../assets/sex/logo2.png"
-import sidegif1 from "../assets/sex/Porn 11.gif"
-import sidegif2 from "../assets/sex/Porn 12.gif"
-import sidegif3 from "../assets/sex/Porn 15.gif"
-import sidegif4 from "../assets/sex/Porn 17.gif"
-import sidegif5 from "../assets/sex/Porn 18.gif"
-import sidegif6 from "../assets/sex/Porn 8.gif"
-import sidegif7 from "../assets/sex/Porn 9.gif"
-import sidegif8 from "../assets/sex/Porn 2.png"
+import sidegif1 from "../assets/sex/Porn Ads/Porn Ad 8.gif"
+import sidegif2 from "../assets/sex/Porn Ads/Porn Ad 7.gif"
+import sidegif3 from "../assets/sex/Porn Ads/Porn Ad 6.gif"
+import sidegif4 from "../assets/sex/Porn Ads/Porn Ad 4.gif"
+import sidegif5 from "../assets/sex/Porn Ads/Porn Ad 5.gif"
+import sidegif6 from "../assets/sex/Porn Ads/Porn Ad 1.gif"
+import sidegif7 from "../assets/sex/Porn Ads/Porn Ad 2.gif"
+import sidegif8 from "../assets/sex/Porn Ads/Porn Ad 3.gif"
 import tn1 from "../assets/sex/TM 1.gif"
 import tn2 from "../assets/sex/TM 2.gif"
 import tn3 from "../assets/sex/TM 3.gif"
@@ -46,22 +49,32 @@ import dn2 from "../assets/sex/Dancers/dancers 2.gif"
 import dn3 from "../assets/sex/Dancers/dancers 3.gif"
 import dn4 from "../assets/sex/Dancers/dancers 4.gif"
 import dn5 from "../assets/sex/Dancers/dancers 5.gif"
+import virus from "../assets/sex/Porn Virus 2.gif"
+
+import loadingGif from "../assets/homepage/loading/loadingbar1.gif"
+import dm from "../assets/sex/DM.gif"
 import tn31 from "../assets/sex/TM 31.gif"
 import banner1 from "../assets/sex/porn_banner.gif"
 
 
 const PornPage = () => {
-
     useEffect(() => {
         // Scroll to top of the page when component is mounted
         window.scrollTo(0, 0);
     }, []);
-    
     const navigate = useNavigate();
+    const [showLoading, setShowLoading] = useState(false);
 
     const navigateTo = (path) => {
-        navigate(path); 
+        setShowLoading(true); // Show the loading screen
+
+        // Wait 2 seconds, hide loading, and then navigate
+        setTimeout(() => {
+            setShowLoading(false); // Hide loading screen
+            navigate(path);        // Navigate to the target path
+        }, 15000);
     };
+
 
     const gifArray = [dn1, dn2, dn3, dn4, dn5];
 
@@ -69,6 +82,34 @@ const PornPage = () => {
     const [currentGifIndex, setCurrentGifIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const [isFading, setIsFading] = useState(false);  // Track fade state
+    const [activePopupId, setActivePopupId] = useState(null);
+    const [imageUrl, setImageUrl] = useState("");
+    const [showWebcam, setShowWebcam] = useState(false);
+
+    const handlePopupClick = (id) => {
+        setImageUrl({virus}); // Replace with your image URL
+        setActivePopupId(id);
+    };
+    
+    const handlePopupClose = () => {
+        setActivePopupId(null);
+    };
+
+    const handleDMClick = () => {
+        setShowWebcam(true);
+        setShowDM(false);
+    }
+
+    const [showDM, setShowDM] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          setShowDM(true);
+        }, 10000); // 10 seconds
+    
+        // Cleanup the timer if the component is unmounted
+        return () => clearTimeout(timer);
+      }, []);
 
     useEffect(() => {
         const gifTimer = setInterval(() => {
@@ -224,6 +265,12 @@ const PornPage = () => {
 
     return (
         <div className="porn-container">
+            {showWebcam && <WebcamPopup />}
+             {showDM && 
+             <div className='dm-container'>
+                <img src={dm} className="dm" onClick={() => handleDMClick()}/>
+             </div>
+             }
             <ScrollingText />
            <div className="prn-sidebar sb-left">
                 {/* Left Sidebar Content */}
@@ -255,6 +302,28 @@ const PornPage = () => {
                             <h1>{data.title}</h1>
                         </div>
                      ))}
+                      <div className="prn-pagination-bar">
+                    <button 
+                    className="prn-pagination-button"
+                    onClick={() => navigateTo('/death')}
+                    >
+                        Previous &lt;&lt;
+                    </button>
+
+                    {/* Display current page numbers */}
+                    <span className="prn-pagination-pages">
+                    <span className="prn-pagination-number"onClick={() => navigateTo('/suicide')}>[1]</span>
+                    <span className="prn-pagination-dots" onClick={() => navigateTo('/suicide')}>....</span>
+                    <span className="prn-pagination-number" onClick={() => navigateTo('/identity')}>[6392]</span>
+                    </span>
+
+                    <button 
+                    className="prn-pagination-button"
+                    onClick={() => navigateTo('/identity')}
+                    >
+                        Next &gt;&gt;
+                    </button>
+                </div>
                     </div>
                     <div className="column right-column">
                         {/* Right Column Content */}
@@ -274,10 +343,11 @@ const PornPage = () => {
                 <img className='side-gif sg-right' src={sidegif7}></img>
                 <img className='side-gif sg-right' src={sidegif8}></img>
             </div>
-            <div className='dancer'>
+            <div className='dancer' onClick={() => handlePopupClick(1)}>
             {!isPaused && <img src={gifArray[currentGifIndex]} alt="Dancing GIF"
               className={`full-screen-gif ${isFading ? 'fade-out' : 'fade-in'}`} />}
             </div>
+            {activePopupId === 1 && <ImagePopUp popUpTitle="!! PORN VIRUS !!" imageUrl={virus} onClose={handlePopupClose} />}
             {/* <div className='banner'>
                 <img className="banner1" src={banner1}></img>
             </div> */}
