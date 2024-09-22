@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lan-party/static/css/main.bb7d8574.css",
-    "main.js": "/lan-party/static/js/main.ce8008e6.js",
-    "static/js/453.028d5aed.chunk.js": "/lan-party/static/js/453.028d5aed.chunk.js",
+    "main.js": "/lan-party/static/js/main.d33b2d82.js",
+    "static/js/453.9e628421.chunk.js": "/lan-party/static/js/453.9e628421.chunk.js",
     "static/media/dancers 3.gif": "/lan-party/static/media/dancers 3.a7086a4ef6eb5fd52785.gif",
     "static/media/dancers 2.gif": "/lan-party/static/media/dancers 2.a186408fa952954e49bc.gif",
     "static/media/dancers 4.gif": "/lan-party/static/media/dancers 4.d540b659e27950757da7.gif",
@@ -142,11 +142,11 @@
     "static/media/hdr_left_bg.png": "/lan-party/static/media/hdr_left_bg.48a097df146b437ac763.png",
     "index.html": "/lan-party/index.html",
     "main.bb7d8574.css.map": "/lan-party/static/css/main.bb7d8574.css.map",
-    "main.ce8008e6.js.map": "/lan-party/static/js/main.ce8008e6.js.map",
-    "453.028d5aed.chunk.js.map": "/lan-party/static/js/453.028d5aed.chunk.js.map"
+    "main.d33b2d82.js.map": "/lan-party/static/js/main.d33b2d82.js.map",
+    "453.9e628421.chunk.js.map": "/lan-party/static/js/453.9e628421.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb7d8574.css",
-    "static/js/main.ce8008e6.js"
+    "static/js/main.d33b2d82.js"
   ]
 }
