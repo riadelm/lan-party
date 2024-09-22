@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./MySpacePage.css";
 import ImagePopUp from "./popups/myspace/imagePopUp"
@@ -40,10 +40,29 @@ import popupimg6 from "../assets/myspacepage/im the girl.jpg"
 import popupimg7 from "../assets/myspacepage/love is like....gif"
 import popupimg8 from "../assets/myspacepage/tupac quote.jpg"
 import popupimgsys1 from "../assets/myspacepage/warning message cropped.png"
+import luckyStarTheme from "../assets/audio/lucky.mp3"
 
 
 
 const MySpacePage = () => {
+
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        const audio = audioRef.current;
+        // Start playing the audio muted (this is allowed by browsers)
+        if (audio) {
+        audio.muted = true;
+        audio.play()
+            .then(() => {
+            // After it starts playing, unmute the audio
+            audio.muted = false;
+            })
+            .catch((error) => {
+            console.error('Autoplay blocked:', error);
+            });
+            }
+        }, []);
 
     useEffect(() => {
         // Scroll to top of the page when component is mounted
@@ -70,6 +89,7 @@ const MySpacePage = () => {
 
     return (
         <div className="myspace-body">
+        <audio ref={audioRef} src={luckyStarTheme} loop />
         {/* <img className="myspace-header-img" src={searchBar}></img> */}
         <nav class="search-bar">
             {/* <form>

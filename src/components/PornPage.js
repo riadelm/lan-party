@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./PornPage.css";
 import LoadingScreen from "./popups/loading/loading"
 import ScrollingText from './popups/sex/text';
 import ImagePopUp from "./popups/sex/imagePopUp"
 import WebcamPopup from "./popups/sex/webcam"
+import sound from "../assets/audio/Porn Page Audio.mp3"
 import logo from "../assets/sex/logo2.png"
 import sidegif1 from "../assets/sex/Porn Ads/Porn Ad 8.gif"
 import sidegif2 from "../assets/sex/Porn Ads/Porn Ad 7.gif"
@@ -54,6 +55,24 @@ import dm from "../assets/sex/DM.gif"
 
 
 const PornPage = () => {
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+      const audio = audioRef.current;
+      // Start playing the audio muted (this is allowed by browsers)
+      if (audio) {
+        audio.muted = true;
+        audio.play()
+          .then(() => {
+            // After it starts playing, unmute the audio
+            audio.muted = false;
+          })
+          .catch((error) => {
+            console.error('Autoplay blocked:', error);
+          });
+          }
+      }, []);
+
     useEffect(() => {
         // Scroll to top of the page when component is mounted
         window.scrollTo(0, 0);
@@ -261,6 +280,7 @@ const PornPage = () => {
 
     return (
         <div className="porn-container">
+             <audio ref={audioRef} src={sound} loop />
             {showWebcam && <WebcamPopup />}
              {showDM && 
              <div className='dm-container'>
