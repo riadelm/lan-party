@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/lan-party/static/css/main.bb7d8574.css",
-    "main.js": "/lan-party/static/js/main.947766b6.js",
+    "main.js": "/lan-party/static/js/main.ce8008e6.js",
     "static/js/453.028d5aed.chunk.js": "/lan-party/static/js/453.028d5aed.chunk.js",
     "static/media/dancers 3.gif": "/lan-party/static/media/dancers 3.a7086a4ef6eb5fd52785.gif",
     "static/media/dancers 2.gif": "/lan-party/static/media/dancers 2.a186408fa952954e49bc.gif",
@@ -39,12 +39,14 @@
     "static/media/Gore 6.gif": "/lan-party/static/media/Gore 6.c28ec58573fa0d5dd6e8.gif",
     "static/media/Porn Ad 8.gif": "/lan-party/static/media/Porn Ad 8.16c2e476132e14445292.gif",
     "static/media/TM 15.gif": "/lan-party/static/media/TM 15.df1ca332652bc4b99422.gif",
+    "static/media/Porn Page Audio.mp3": "/lan-party/static/media/Porn Page Audio.9082c5c22ca6f4b6a182.mp3",
     "static/media/Death Image rough.png": "/lan-party/static/media/Death Image rough.62250dc726c3987e2371.png",
     "static/media/Porn Ad 6.gif": "/lan-party/static/media/Porn Ad 6.f757fc5371abdd1c727f.gif",
     "static/media/TM 26.gif": "/lan-party/static/media/TM 26.da52c30905eb9609103d.gif",
     "static/media/konata-lucky-star.gif": "/lan-party/static/media/konata-lucky-star.6990c21231a885bf9620.gif",
     "static/media/yuri.png": "/lan-party/static/media/yuri.5227e905abc4aeb1198e.png",
     "static/media/TM 25.gif": "/lan-party/static/media/TM 25.a3cb9562946d6ffd9380.gif",
+    "static/media/lucky.mp3": "/lan-party/static/media/lucky.312b2d9d8fcbf0826e40.mp3",
     "static/media/DM.gif": "/lan-party/static/media/DM.64e32976e777bed8b701.gif",
     "static/media/Click-Thru Gore 8.png": "/lan-party/static/media/Click-Thru Gore 8.b69a2bbc51993daf20e5.png",
     "static/media/Click-Thru Gore 4.png": "/lan-party/static/media/Click-Thru Gore 4.1df910cd337057d54b5e.png",
@@ -140,11 +142,11 @@
     "static/media/hdr_left_bg.png": "/lan-party/static/media/hdr_left_bg.48a097df146b437ac763.png",
     "index.html": "/lan-party/index.html",
     "main.bb7d8574.css.map": "/lan-party/static/css/main.bb7d8574.css.map",
-    "main.947766b6.js.map": "/lan-party/static/js/main.947766b6.js.map",
+    "main.ce8008e6.js.map": "/lan-party/static/js/main.ce8008e6.js.map",
     "453.028d5aed.chunk.js.map": "/lan-party/static/js/453.028d5aed.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb7d8574.css",
-    "static/js/main.947766b6.js"
+    "static/js/main.ce8008e6.js"
   ]
 }
