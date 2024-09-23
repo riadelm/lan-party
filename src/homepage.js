@@ -13,8 +13,9 @@ import loading4 from './assets/homepage/loading/loadingbar4.gif';
 import loading5 from './assets/homepage/loading/loadingbar5.gif';
 // import loading6 from './assets/homepage/loading/loadingbar6.gif';
 import roundloading from './assets/homepage/loading/roundloading2.gif';
-import reboot from './assets/homepage/loading/factoryreset.jpeg';
+import reboot from './assets/homepage/loading/factoryreset.png';
 import cursorGif from './assets/homepage/loading/cursorloading.gif';
+import click from './assets/audio/click.mp3'
 
 function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -33,11 +34,19 @@ function HomePage() {
   const containerRef = useRef(null);
   const pixelatedImageRef = useRef(null);
 
+
+  const playClickSound = () => {
+    const audio = new Audio(click); // Ensure this path is correct
+    audio.play();
+  };
+
+
   const navigate = useNavigate();
 
   const navigateTo = (path) => {
       navigate(path); 
   };
+
 
   useEffect(() => {
     if (rotateImages) {
@@ -90,6 +99,7 @@ function HomePage() {
   }, [currentImageIndex, rotateImages]);
 
   const handleClick = () => {
+    playClickSound();
     setRotateImages(false);
     setPixelSize(70);
     setShowCustomCursor(true);

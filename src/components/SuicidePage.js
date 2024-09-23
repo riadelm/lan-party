@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./SuicidePage.css";
-import background from "../assets/death/suicideroom.jpg"
+import HomeIcon from './popups/homebtn/home';
 import shpfp1 from "../assets/death/self harm 3.jpg";
 import shpfp6 from "../assets/death/self harm 6.jpg";
 
@@ -55,6 +55,7 @@ const SuicidePage = () => {
 
     return (
         <div className="sh-container">
+            <HomeIcon />
             <div className="sh-table-content">
                 <table>
                     {entriesData.map((data, index) => (

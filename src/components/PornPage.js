@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./PornPage.css";
-import LoadingScreen from "./popups/loading/loading"
+import HomeIcon from './popups/homebtn/home';
 import ScrollingText from './popups/sex/text';
 import ImagePopUp from "./popups/sex/imagePopUp"
 import WebcamPopup from "./popups/sex/webcam"
@@ -15,36 +15,36 @@ import sidegif5 from "../assets/sex/Porn Ads/Porn Ad 5.gif"
 import sidegif6 from "../assets/sex/Porn Ads/Porn Ad 1.gif"
 import sidegif7 from "../assets/sex/Porn Ads/Porn Ad 2.gif"
 import sidegif8 from "../assets/sex/Porn Ads/Porn Ad 3.gif"
-import tn1 from "../assets/sex/TM 1.gif"
-import tn2 from "../assets/sex/TM 2.gif"
-import tn3 from "../assets/sex/TM 3.gif"
-import tn4 from "../assets/sex/TM 4.gif"
-import tn5 from "../assets/sex/TM 5.gif"
-import tn6 from "../assets/sex/TM 6.gif"
-import tn7 from "../assets/sex/TM 7.gif"
-import tn8 from "../assets/sex/TM 8.gif"
-import tn9 from "../assets/sex/TM 9.gif"
-import tn10 from "../assets/sex/TM 10.gif"
-import tn11 from "../assets/sex/TM 11.gif"
-import tn12 from "../assets/sex/TM 12.gif"
-import tn13 from "../assets/sex/TM 13.gif"
-import tn14 from "../assets/sex/TM 14.gif"
-import tn15 from "../assets/sex/TM 15.gif"
-import tn16 from "../assets/sex/TM 16.gif"
-import tn17 from "../assets/sex/TM 17.gif"
-import tn18 from "../assets/sex/TM 18.gif"
-import tn19 from "../assets/sex/TM 19.gif"
-import tn20 from "../assets/sex/TM 20.gif"
-import tn21 from "../assets/sex/TM 21.gif"
-import tn22 from "../assets/sex/TM 22.gif"
-import tn23 from "../assets/sex/TM 23.gif"
-import tn24 from "../assets/sex/TM 24.gif"
-import tn25 from "../assets/sex/TM 25.gif"
-import tn26 from "../assets/sex/TM 26.gif"
-import tn27 from "../assets/sex/TM 27.gif"
-import tn28 from "../assets/sex/TM 28.gif"
-import tn29 from "../assets/sex/TM 29.gif"
-import tn30 from "../assets/sex/TM 30.gif"
+import tn1 from "../assets/sex/1 TM.gif"
+import tn2 from "../assets/sex/2 TM.gif"
+import tn3 from "../assets/sex/3 TM.gif"
+import tn4 from "../assets/sex/4 TM.gif"
+import tn5 from "../assets/sex/5 TM.gif"
+import tn6 from "../assets/sex/6 TM.gif"
+import tn7 from "../assets/sex/7 TM.gif"
+import tn8 from "../assets/sex/8 TM.gif"
+import tn9 from "../assets/sex/9 TM.gif"
+import tn10 from "../assets/sex/10 TM.gif"
+import tn11 from "../assets/sex/11 TM.gif"
+import tn12 from "../assets/sex/12 TM.gif"
+import tn13 from "../assets/sex/13 TM.gif"
+import tn14 from "../assets/sex/14 TM.gif"
+import tn15 from "../assets/sex/15 TM.gif"
+import tn16 from "../assets/sex/16 TM.gif"
+import tn17 from "../assets/sex/17 TM.gif"
+import tn18 from "../assets/sex/18 TM.gif"
+import tn19 from "../assets/sex/19 TM.gif"
+import tn20 from "../assets/sex/20 TM.gif"
+import tn21 from "../assets/sex/21 TM.gif"
+import tn22 from "../assets/sex/22 TM.gif"
+import tn23 from "../assets/sex/23 TM.gif"
+import tn24 from "../assets/sex/24 TM.gif"
+import tn25 from "../assets/sex/25 TM.gif"
+import tn26 from "../assets/sex/26 TM.gif"
+import tn27 from "../assets/sex/27 TM.gif"
+import tn28 from "../assets/sex/28 TM.gif"
+import tn29 from "../assets/sex/29 TM.gif"
+import tn30 from "../assets/sex/30 TM.gif"
 import dn1 from "../assets/sex/Dancers/dancers 1.gif"
 import dn2 from "../assets/sex/Dancers/dancers 2.gif"
 import dn3 from "../assets/sex/Dancers/dancers 3.gif"
@@ -151,135 +151,136 @@ const PornPage = () => {
     const tnRight = [
         {
             imgSrc: tn1,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn2,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn3,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Blindfolded Surprise SHE DIDN’T SEE IT COMING - BDSM Torture Play"
         },
         {
             imgSrc: tn4,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn5,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn6,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Two TEENY Latinas Striptease"
         },
         {
             imgSrc: tn7,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Self-Sucking"
         },
         {
-            imgSrc: tn8,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn10,
+            title: "Two TEENY Latinas Striptease"
         },
         {
-            imgSrc: tn9,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn13,
+            title: "WTF Why R U Naked?"
+        },
+        {
+            imgSrc: tn16,
+            title: "Goth Dominatrix Punishment - LESBO BDSM"
+        },
+        {
+            imgSrc: tn19,
+            title: "Asian Nurse Cosplay Fucked HARD on couch"
+        },
+        {
+            imgSrc: tn22,
+            title: "Dom milks submissive twink - PUNISHED"
+        },
+        {
+            imgSrc: tn25,
+            title: "He CAN’T stop moaning! - Power Fucked in my SISTERS ROOM"
         },
         {
             imgSrc: tn28,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Horny Emo Twinks Brothers"
         }
         
     ]
 
     const tnLeft = [
         {
-            imgSrc: tn15,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn2,
+            title: "Tatted - Jules Jordan DEEPTHROAT"
         },
         {
-            imgSrc: tn12,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn5,
+            title: "making myself cum without hands"
         },
         {
-            imgSrc: tn13,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn14,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn8,
+            title: "Total Anal Kama Sutra"
         },
         {
             imgSrc: tn11,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Total SUBMISSION - Blonde Slut PUNISHED"
         },
         {
-            imgSrc: tn16,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn14,
+            title: "Fucked By My Physical Therapist???!"
         },
         {
             imgSrc: tn17,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn18,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn19,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "fucking myself with a cucumber til I CUM"
         },
         {
             imgSrc: tn20,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Oiled Up Natural TITS titty-fucking till I cum"
+        },
+        {
+            imgSrc: tn23,
+            title: "Redhead’s Pussy DESTROYED - Hardcore fingering"
+        },
+        {
+            imgSrc: tn26,
+            title: "Student rails Horny Teacher"
+        },
+        {
+            imgSrc: tn29,
+            title: "Sexy Tatted Alternative Chicks Want To Pleasure You - 5 Way Action "
         }
     ]
 
     const tnMiddle = [
         {
-            imgSrc: tn29,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn3,
+            title: "Chained Up Slave BEGS to CUM"
         },
         {
-            imgSrc: tn22,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn6,
+            title: "UNCENSORED busty hentai maid gets fucked"
         },
         {
-            imgSrc: tn23,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn9,
+            title: "Dutch hooker face-rides"
         },
         {
-            imgSrc: tn24,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn12,
+            title: "Dirty Old Man Pleasures Himself"
         },
         {
-            imgSrc: tn25,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn15,
+            title: "Twink destroyed By German Soldiers"
         },
         {
-            imgSrc: tn26,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn27,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
-        },
-        {
-            imgSrc: tn10,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            imgSrc: tn18,
+            title: "Old MILF pleasures herself in public"
         },
         {
             imgSrc: tn21,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Teeny Blonde Power Fucked by StepDad"
+        },
+        {
+            imgSrc: tn24,
+            title: "Horny Pussy Gets A HUGE Load of Cum on her Clit "
+        },
+        {
+            imgSrc: tn27,
+            title: "Sexy BIG TITS latina Sucks You Dry"
         },
         {
             imgSrc: tn30,
-            title: "DIRTY neophyte gets DESTROYED in GANG-BANG"
+            title: "Morning Quickie with my Sexy College fuck buddy"
         }
     ]
 
     return (
         <div className="porn-container">
+            <HomeIcon />
              <audio ref={audioRef} src={sound} loop />
             {showWebcam && <WebcamPopup />}
              {showDM && 
@@ -299,7 +300,7 @@ const PornPage = () => {
                 {/* Main Content */}
                 <div className="prn-logo">
                     <img src={logo}></img>
-                    <h1>are you ready to perform?</h1>
+                    <h1>Thank you for joining the community!</h1>
                 </div>
                 <div className="content-columns">
                     <div className="column left-column">

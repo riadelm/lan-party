@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./FanficPage.css";
 import TextPopUp from "./popups/fanfic/textPopUp"
+import HomeIcon from './popups/homebtn/home';
+import LoadingScreen from "./popups/loading/loading"
+import loadingGif from "../assets/homepage/loading/loadingbar1.gif"
 import home from "../assets/fanficpage/Home Icon.png";
 import fanfics from "../assets/fanficpage/Book Icon.png";
 import buttonBg from "../assets/fanficpage/button_bg.png";
@@ -31,9 +34,15 @@ import compfp3 from "../assets/fanficpage/Tomboytom89.png";
 import compfp4 from "../assets/fanficpage/Edwardluvr1234.png";
 import compfp5 from "../assets/fanficpage/Guest.png";
 import compfp6 from "../assets/fanficpage/Don't Lose Hope.png";
+import click from '../assets/audio/click.mp3'
 
 
 const FanficPage = () => {
+
+    const playClickSound = () => {
+        const audio = new Audio(click); // Ensure this path is correct
+        audio.play();
+      };  
 
     useEffect(() => {
         // Scroll to top of the page when component is mounted
@@ -41,9 +50,15 @@ const FanficPage = () => {
     }, []);
 
     const navigate = useNavigate();
+    const [showLoading, setShowLoading] = useState(false);
 
     const navigateTo = (path) => {
-        navigate(path); 
+        setShowLoading(true);
+         setTimeout(() => {
+          setShowLoading(false); // Hide loading screen
+          navigate(path);        // Navigate to the target path
+      }, 10000);
+
     };
 
     const [isVisible, setIsVisible] = useState([false, false, false, false]);
@@ -73,6 +88,7 @@ const FanficPage = () => {
     };
 
     const handlePopupSelectChange = (e) => {
+        playClickSound();
         const selectedValue = e.target.value; // Get the value of the selected option
         setSelectedChapter(selectedValue);
         // Optionally, handle other logic here (e.g., navigation or displaying a popup)
@@ -82,6 +98,7 @@ const FanficPage = () => {
 
 
     const handleClick = (index) => {
+        playClickSound();
         // Show the bubble for the clicked <li> element
         setVisibleBubble(index);
 
@@ -92,6 +109,7 @@ const FanficPage = () => {
     };
     
     const toggleVisibility = (index) => {
+        playClickSound();
         setIsVisible((prevState) => {
         const newState = [...prevState];
         newState[index] = !newState[index];
@@ -101,21 +119,21 @@ const FanficPage = () => {
       
         const tableData = [
           {
-            imgSrc: ffpfp1,
+            imgSrc: ffpfp3,
             username: 'd00mkitt3n',
             title: 'The Cost of Immortality',
             description: 'Sebastien lures Ciel into a world of darkness, but Ciel can’t help help but be attracted to the mysterious Lady pulling him away from innocence…(Black Butler genderswap AU)',
             tags: 'Romance/Smut - Chapters 3 - Words 1,259 - Reviews 4 - Favs 0 - Published December 2008'
           },
           {
-            imgSrc: ffpfp2,
+            imgSrc: ffpfp1,
             username: 'angelofsinz08',
             title: 'Hugging the Ghosts Goodnight',
             description: 'Tsubaki will soon learn that once the veil is lifted, the shadows beneath are all too real (Soul Eater x Lucky Star)',
             tags: 'Romance/Drama - Chapters 5 - Words 2,340 - Reviews 6 - Favs 10 - Published March 2008'
           },
           {
-            imgSrc: ffpfp3,
+            imgSrc: ffpfp2,
             username: 'sweeetysy',
             title: 'blood, spit, and tears',
             description: "Something happened that changed her world. Something irreversible. This journey will push her to her limits, and she won't return the same. NOT AN OC!!! The rating is for YURI and some swearwords.",
@@ -180,19 +198,25 @@ const FanficPage = () => {
  
     return (
         <div className="fanfic-body">
+            {showLoading && <LoadingScreen
+                color= "black"
+                loadingGif={loadingGif}
+                width= "10vw"
+                />}
+            <HomeIcon />
             <div className="user_bar">
                 <div className="container">
                     <div className="span-24">
                         <ul>
-                        <li><a href="#" title="Profile">Profile</a></li>
-                        <li><a href="#" title="Stories">Stories</a></li>
-                        <li><a href="#" title="Subscriptions">Subscriptions</a></li>
-                        <li><a href="#" title="Bookmarks">Bookmarks</a></li>
-                        <li><a href="#" title="Friends">Friends</a></li>
-                        <li><a href="#"title="Blog">Blog</a></li>
-                        <li><a href="#" title="Settings">Settings</a></li>
-                        <li><a href="#" title="Random Story">Random Story</a></li>
-                        <li><a href="#" title="Winglin Importer">Winglin Importer</a></li>
+                        <li><a onClick={() => playClickSound()} title="Profile">Profile</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Stories">Stories</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Subscriptions">Subscriptions</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Bookmarks">Bookmarks</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Friends">Friends</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Blog">Blog</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Settings">Settings</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Random Story">Random Story</a></li>
+                        <li><a onClick={() => playClickSound()}  title="Winglin Importer">Winglin Importer</a></li>
                         </ul>
                     </div>
                 </div>
@@ -203,37 +227,37 @@ const FanficPage = () => {
                     
                         <div className="hdr_left">
                     
-                        <a href="#" title="lucky-star-fanfic.com"><img src={logo} className="logo-ff" alt="lucky-star-fanfic.com"/></a>
+                        <a  title="lucky-star-fanfic.com"><img src={logo} className="logo-ff" alt="lucky-star-fanfic.com"/></a>
                     
                             <div className="hdr_left_btn_grp">
                                 <div className="hdr_btn writing">
-                                    <a href="#" title="Start Writing">Start Writing</a>
+                                    <a  title="Start Writing">Start Writing</a>
                                 </div>
                                 <div className="hdr_btn browsing">
-                                    <a href="#" title="Browse Topics">Browse Topics</a>
+                                    <a  title="Browse Topics">Browse Topics</a>
                                  </div>
                             </div>
                     
                             {/* <div className="login_grp">
-                                Hello Guest! &nbsp; <a className="login" href="#" title="Login / Register">Login / Register</a>
+                                Hello Guest! &nbsp; <a className="login"  title="Login / Register">Login / Register</a>
                             </div> */}
                         </div>
                     
                         <div className="hdr_right">
                             <div className="top_rt_hdr">
                                 <ul>
-                                    <li><a href="#" title="FAQ">FAQ</a></li>
+                                    <li><a  title="FAQ">FAQ</a></li>
                                     <li>|</li>
-                                    <li><a href="#" title="Contact">Contact</a></li>
+                                    <li><a  title="Contact">Contact</a></li>
                                     <li>|</li>
-                                    <li><a href="#" title="About">About</a></li>
+                                    <li><a  title="About">About</a></li>
                                 </ul>
                                 <form action="#" id="cse-search-box" className="search_form" onSubmit={(e) => handlePopupClick(e, 1)}>
                                     <input type="hidden" name="cx" value="partner-pub-8482723550199408:wfkhzi-cpj7"/>
                                     <input type="hidden" name="cof" value="FORID:10"/>
                                     <input type="hidden" name="ie" value="ISO-8859-1"/>
                                     <input type="text" className="search_field" name="q" size="40" value={textContent} onChange={handlePopupInputChange}/> 
-                                    <input className="submit_btn" type="submit" name="sa" value="Search"/>
+                                    <input className="submit_btn" type="submit" name="sa" value="Search" onClick={() => playClickSound()}/>
                                 </form>
                                 {activePopupId === 1 && <TextPopUp popUpTitle="Search" textContent={`Oopsie! ${textContent} does not exist :/`} onClose={handlePopupClose} />}
                             </div>
@@ -246,8 +270,8 @@ const FanficPage = () => {
                                 onClick={() => handleClick(index)}
                                 className="nav-item"
                                 >
-                                <a href={item.href} title={item.title}>
-                                    <img src={item.imgSrc} alt={item.title} />
+                                <a title={item.title}>
+                                    <img onClick={() => playClickSound()} src={item.imgSrc} alt={item.title} />
                                     <span>{item.title}</span>
                                 </a>
                                 {visibleBubble === index && (
@@ -269,10 +293,10 @@ const FanficPage = () => {
                 <div class="container">
                     <div class="span-24">
                     <ul class="fanfics show_fanfics">
-                        <li><a href="#">Latest</a></li>
-                        <li><a href="#">Newest</a></li>
-                        <li><a href="#">Completed</a></li>
-                        <li><a href="#">Alphabetical</a></li>
+                        <li><a onClick={() => playClickSound()}>Latest</a></li>
+                        <li><a onClick={() => playClickSound()}>Newest</a></li>
+                        <li><a onClick={() => playClickSound()}>Completed</a></li>
+                        <li><a onClick={() => playClickSound()}>Alphabetical</a></li>
                     </ul>
                     <ul>
                     <li>&nbsp;</li>
@@ -284,15 +308,16 @@ const FanficPage = () => {
             <div class="container">
             <div class="span-5 sidebar">
                 <div class="login_box">
-                        <form>
+                        <form action="#" onSubmit={(e) => handlePopupClick(e, 0)}>
                             <input type="text" name="username" value="Username" className="textfield" size="20" maxlength="50"/><br/>
                             {/* ="margin-top:3px" */}
                             <input type="password" name="password" value="Password" class="textfield" size="20" maxlength="50"/><br/>
                             {/* "margin-top:13px" */}
                             <div>
-                                <input type="submit" class="submit_btn" name="sub_login" value="Login"/>
+                                <input type="submit" class="submit_btn" name="sub_login" value="Login" onClick={() => playClickSound()} />
                             </div>
                         </form>
+                        {activePopupId === 0 && <TextPopUp popUpTitle="Login" textContent={`Oopsie! you are not allowed to meddle with the past :/`} onClose={handlePopupClose} />}
                     </div>
                     <div class="story_subnav nonmobile">
                     <h1>Featured Fanfics</h1>
@@ -306,7 +331,7 @@ const FanficPage = () => {
                                 </th>
                                 <td>
                                     <h3>
-                                        <a href="#">{data.username}</a> - {data.title}
+                                        <a >{data.username}</a> - {data.title}
                                     </h3>
                                     {!isVisible[index] && (
                                     <div className="sidebar-more" onClick={() => toggleVisibility(index)} style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center' }}>
@@ -332,23 +357,23 @@ const FanficPage = () => {
                             <div class="content">
                                 <h1 class="story_title" name="story_title">Chapter 4: Never Sick of You</h1>
                                     <p>
-                                        by <strong><a href="#">starahhsan12</a></strong>
+                                        by <strong><a >starahhsan12</a></strong>
                                         <br/>
                         
                                         Tags &nbsp;
-                                        <a href="#">angst</a> &nbsp;
-                                        <a href="#">konata</a> &nbsp;
-                                        <a href="#">comedy</a> &nbsp;
-                                        <a href="#">romance</a> &nbsp;
-                                        <a href="#">kissing</a> &nbsp;
-                                        <a href="#">luckystar</a> &nbsp;
-                                        <a href="#">yuri</a> &nbsp;
+                                        <a >angst</a> &nbsp;
+                                        <a >konata</a> &nbsp;
+                                        <a >comedy</a> &nbsp;
+                                        <a >romance</a> &nbsp;
+                                        <a >kissing</a> &nbsp;
+                                        <a >luckystar</a> &nbsp;
+                                        <a >yuri</a> &nbsp;
                                         {/* style="clear:both" */}
                                         <br/>
                                     </p>
                                     <img className="chapter-pic" src={chapterPic}></img>
                         
-                                    <div class="menuNav">
+                                    <div class="menuNav" onClick={() => playClickSound()}>
                                     <select name="chapterNav" value={selectedChapter} onChange={(e) => handlePopupSelectChange(e)}>
                                     ?&gt;
                                         <option value="2">Foreword</option>
@@ -415,7 +440,7 @@ const FanficPage = () => {
                                                 </th>
                                                 <td>
                                                     <h3 className="comment-h3">
-                                                        <a href="#" className="comment-username" onClick={(e) => handlePopupClick(e, (index+popupOffset))} >{data.username}</a> 
+                                                        <a  className="comment-username" onClick={(e) => handlePopupClick(e, (index+popupOffset))} >{data.username}</a> 
                                                         <span className="comment-time">{data.time}</span>
                                                     </h3>
                                                     <p className="comment-content">{data.content}</p>

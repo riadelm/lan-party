@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./MySpacePage.css";
-import ImagePopUp from "./popups/myspace/imagePopUp"
-import SystemPopUp from "./popups/myspace/systemPopUp"
+import ImagePopUp from "./popups/myspace/imagePopUp";
+import SystemPopUp from "./popups/myspace/systemPopUp";
+import HomeIcon from './popups/homebtn/home';
 import searchBar from "../assets/myspacepage/Myspace logo.png"
 import pfp from "../assets/myspacepage/profile-pic.png"
 import mood from "../assets/myspacepage/mehhh.gif"
@@ -41,10 +42,16 @@ import popupimg7 from "../assets/myspacepage/love is like....gif"
 import popupimg8 from "../assets/myspacepage/tupac quote.jpg"
 import popupimgsys1 from "../assets/myspacepage/warning message cropped.png"
 import luckyStarTheme from "../assets/audio/lucky.mp3"
+import click from '../assets/audio/click.mp3'
+
 
 
 
 const MySpacePage = () => {
+    const playClickSound = () => {
+        const audio = new Audio(click); // Ensure this path is correct
+        audio.play();
+      };    
 
     const audioRef = useRef(null);
 
@@ -59,7 +66,7 @@ const MySpacePage = () => {
             audio.muted = false;
             })
             .catch((error) => {
-            console.error('Autoplay blocked:', error);
+                console.error('Autoplay blocked:', error);
             });
             }
         }, []);
@@ -73,6 +80,7 @@ const MySpacePage = () => {
     const [imageUrl, setImageUrl] = useState("");
     const [activePopupId, setActivePopupId] = useState(null);
     const handleClick = (id) => {
+        playClickSound();
         setImageUrl({pfp}); // Replace with your image URL
         setActivePopupId(id);
     };
@@ -84,11 +92,13 @@ const MySpacePage = () => {
     const navigate = useNavigate();
 
     const navigateTo = (path) => {
+        playClickSound();
         navigate(path); 
     };
 
     return (
         <div className="myspace-body">
+            <HomeIcon />
         <audio ref={audioRef} src={luckyStarTheme} loop />
         {/* <img className="myspace-header-img" src={searchBar}></img> */}
         <nav class="search-bar">
@@ -112,20 +122,20 @@ const MySpacePage = () => {
         </nav>
         <nav className="navbar">
             <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Browse</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Invite</a></li>
-            <li><a href="#">Film</a></li>
-            <li><a href="#">Mail</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Favorites</a></li>
-            <li><a href="#">Forum</a></li>
-            <li><a href="#">Groups</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Videos</a></li>
-            <li><a href="#">Music</a></li>
-            <li><a href="#">Classifieds</a></li>
+            <li><a  >Home</a></li>
+            <li><a  >Browse</a></li>
+            <li><a  >Search</a></li>
+            <li><a  >Invite</a></li>
+            <li><a  >Film</a></li>
+            <li><a  >Mail</a></li>
+            <li><a  >Blog</a></li>
+            <li><a  >Favorites</a></li>
+            <li><a  >Forum</a></li>
+            <li><a  >Groups</a></li>
+            <li><a  >Events</a></li>
+            <li><a  >Videos</a></li>
+            <li><a  >Music</a></li>
+            <li><a  >Classifieds</a></li>
             </ul>
         </nav>
             <div className="page-content-container">
@@ -156,7 +166,7 @@ const MySpacePage = () => {
                             <li>4/22/2009</li>
                         </ul>
 
-                        <p className="pics-videos">View My: <a href="#!" onClick={() => handleClick(9)}><b>Pics</b></a> | <a href="#!" onClick={() => handleClick(10)}><b>Videos</b></a></p>
+                        <p className="pics-videos">View My: <a  onClick={() => handleClick(9)}><b>Pics</b></a> | <a  onClick={() => handleClick(10)}><b>Videos</b></a></p>
                         {activePopupId === 9 && <SystemPopUp popUpTitle="Pics" imageUrl={popupimgsys1} onClose={handleClose} />}
                         {activePopupId === 10 && <SystemPopUp popUpTitle="Pics" imageUrl={popupimgsys1} onClose={handleClose} />}
                         <p className="mood"><b>Mood: meh </b><img src={mood}></img></p>
@@ -257,7 +267,7 @@ const MySpacePage = () => {
 
                             <p>i have two older brothers and a little sister who is sooo annoying!! I can’t wait to live on my own and not be bothered by anyone evarr</p>
 
-                            <p>i am a writer and i update my fic <a className="to-ff" onClick={() => navigateTo('/love')}>STARS ABOVE</a> every wednesday on fanfiction.net, its mostly kagami x konata yuri fluff but with some cross over stuff too okaiiiiiii byeee i hope you check it out ヾ(☆▽☆) ✿✿✿✿✿✿</p>
+                            <p>i am a writer and i update my fic <a className="to-ff" onClick={() => navigateTo('/love')}>STARS ABOVE</a> every wednesday on animeyurifanfics.net, its mostly kagami x konata yuri fluff but with some cross over stuff too okaiiiiiii byeee i hope you check it out ヾ(☆▽☆) ✿✿✿✿✿✿</p>
 
                             <h3 className="to-ff" onClick={() => navigateTo('/love')}>CHAPTER 4 COMING SOOONZ(๑´&gt;᎑&lt;)~*</h3>
                             <p>thanks soo much for the support <b className="to-ff" onClick={() => navigateTo('/love')}>I LOVE YOU ALL</b></p>
@@ -284,55 +294,55 @@ const MySpacePage = () => {
 
                     <div className="friend-pic-container">
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(1)}>Edwardz Cookiez</a></figcaption>
+                        <figcaption><a  onClick={() => handleClick(1)}>Edwardz Cookiez</a></figcaption>
+                        <img src={friend1} onClick={() => handleClick(1)}></img>
                         {activePopupId === 1 && <ImagePopUp popUpTitle="Edwardz Cookiez" imageUrl={popupimg1} onClose={handleClose} />}
-                        <img src={friend1}></img>
                         </figure>
 
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(2)}>koalagrrl</a></figcaption>
+                        <figcaption><a  onClick={() => handleClick(2)}>koalagrrl</a></figcaption>
+                        <img src={friend2} onClick={() => handleClick(2)}></img>
                         {activePopupId === 2 && <ImagePopUp popUpTitle="koalagrrl" imageUrl={popupimg2} onClose={handleClose} />}
-                        <img src={friend2}></img>
                         </figure>
 
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(3)}>*mae moriko*</a></figcaption>
-                        {activePopupId === 3 && <ImagePopUp popUpTitle="Edwardz Cookiez" imageUrl={popupimg3} onClose={handleClose} />}
-                        <img src={friend3}></img>
+                        <figcaption><a  onClick={() => handleClick(3)}>*mae moriko*</a></figcaption>
+                        <img src={friend3} onClick={() => handleClick(3)}></img>
+                        {activePopupId === 3 && <ImagePopUp popUpTitle="*mae moriko*" imageUrl={popupimg3} onClose={handleClose} />}
                         </figure>
 
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(4)}>spenser</a></figcaption>
+                        <figcaption><a  onClick={() => handleClick(4)}>spenser</a></figcaption>
+                        <img src={friend4} onClick={() => handleClick(4)}></img>
                         {activePopupId === 4 && <ImagePopUp popUpTitle="spenser" imageUrl={popupimg4} onClose={handleClose} />}
-                        <img src={friend4}></img>
                         </figure>
 
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(5)}>.eyrkah.</a></figcaption>
+                        <figcaption><a  onClick={() => handleClick(5)}>.eyrkah.</a></figcaption>
+                        <img src={friend5} onClick={() => handleClick(5)}></img>
                         {activePopupId === 5 && <ImagePopUp popUpTitle=".eyrkah." imageUrl={popupimg5} onClose={handleClose} />}
-                        <img src={friend5}></img>
                         </figure>
 
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(6)}>Pwencess Chubby</a></figcaption>
+                        <figcaption><a  onClick={() => handleClick(6)}>Pwencess Chubby</a></figcaption>
+                        <img src={friend6} onClick={() => handleClick(6)}></img>
                         {activePopupId === 6 && <ImagePopUp popUpTitle="Pwencess Chubby" imageUrl={popupimg6} onClose={handleClose} />}
-                        <img src={friend6}></img>
                         </figure>
 
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(7)}>~JUST LET IT BE~</a></figcaption>
+                        <figcaption><a  onClick={() => handleClick(7)}>~JUST LET IT BE~</a></figcaption>
+                        <img src={friend7} onClick={() => handleClick(7)}></img>
                         {activePopupId === 7 && <ImagePopUp popUpTitle="~JUST LET IT BE~" imageUrl={popupimg7} onClose={handleClose} />}
-                        <img src={friend7}></img>
                         </figure>
 
                         <figure>
-                        <figcaption><a href="#!" onClick={() => handleClick(8)}>Xspace_ninjaX</a></figcaption>
+                        <figcaption><a  onClick={() => handleClick(8)}>Xspace_ninjaX</a></figcaption>
+                        <img src={friend8} onClick={() => handleClick(8)}></img>
                         {activePopupId === 8 &&<ImagePopUp popUpTitle="Xspace_ninjaX" imageUrl={popupimg8} onClose={handleClose} />}
-                        <img src={friend8}></img>
                         </figure>
                     </div>
 
-                    <p className="friends-list-link"><a href="#">View All of <span className="profile-name">sarah san&lt;3 (✿◠‿◠)</span>'s Friends</a></p>
+                    <p className="friends-list-link"><a >View All of <span className="profile-name">sarah san&lt;3 (✿◠‿◠)</span>'s Friends</a></p>
                     </section>
 
                     <section className="comment-wall">
@@ -340,13 +350,13 @@ const MySpacePage = () => {
                             <h2 className="main-section-h2"><span className="profile-name">sarah san&lt;3 (✿◠‿◠)</span>'s Friends Comments</h2>
                         </header>
 
-                        <p id="comment-counter"><b>Displaying <span className="focus-highlight">10</span> of <span className="focus-highlight">3092</span> comments (<a href="#">View/Edit All Comments</a>)</b></p>
+                        <p id="comment-counter"><b>Displaying <span className="focus-highlight">10</span> of <span className="focus-highlight">3092</span> comments (<a  >View/Edit All Comments</a>)</b></p>
 
                         <table>
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(8)}>
                                 <figure>
-                                <figcaption><a href="#">Xspace_ninjaX</a></figcaption>
+                                <figcaption><a >Xspace_ninjaX</a></figcaption>
                                 <img className="comment-pfp" src={friend8}></img>
                                 </figure>
                             </th>
@@ -359,9 +369,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(1)}>
                                 <figure>
-                                <figcaption><a href="#">Edwardz Cookiez</a></figcaption>
+                                <figcaption><a >Edwardz Cookiez</a></figcaption>
                                 <img className="comment-pfp" src={friend1}></img>
                                 </figure>
                             </th>
@@ -372,9 +382,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(1)}>
                                 <figure>
-                                <figcaption><a href="#">Edwardz Cookiez</a></figcaption>
+                                <figcaption><a >Edwardz Cookiez</a></figcaption>
                                 <img className="comment-pfp" src={friend1}></img>
                                 </figure>
                             </th>
@@ -385,9 +395,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(3)}>
                                 <figure>
-                                <figcaption><a href="#">*mae moriko*</a></figcaption>
+                                <figcaption><a >*mae moriko*</a></figcaption>
                                 <img className="comment-pfp" src={friend3}></img>
                                 </figure>
                             </th>
@@ -398,9 +408,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(2)}>
                                 <figure>
-                                <figcaption><a href="#">koalagrrl</a></figcaption>
+                                <figcaption><a >koalagrrl</a></figcaption>
                                 <img className="comment-pfp" src={friend2}></img>
                                 </figure>
                             </th>
@@ -411,9 +421,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(1)}>
                                 <figure>
-                                <figcaption><a href="#">Edwardz Cookiez</a></figcaption>
+                                <figcaption><a >Edwardz Cookiez</a></figcaption>
                                 <img className="comment-pfp" src={friend1}></img>
                                 </figure>
                             </th>
@@ -424,9 +434,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(7)}>
                                 <figure>
-                                <figcaption><a href="#">CirKus goThiKa</a></figcaption>
+                                <figcaption><a >CirKus goThiKa</a></figcaption>
                                 <img className="comment-pfp" src={friend200}></img>
                                 </figure>
                             </th>
@@ -437,9 +447,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(8)}>
                                 <figure>
-                                <figcaption><a href="#">Xspace_ninjaX</a></figcaption>
+                                <figcaption><a >Xspace_ninjaX</a></figcaption>
                                 <img className="comment-pfp" src={friend8}></img>
                                 </figure>
                             </th>
@@ -452,9 +462,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(1)}>
                                 <figure>
-                                <figcaption><a href="#">Edwardz Cookiez</a></figcaption>
+                                <figcaption><a >Edwardz Cookiez</a></figcaption>
                                 <img className="comment-pfp" src={friend1}></img>
                                 </figure>
                             </th>
@@ -465,9 +475,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(8)}>
                                 <figure>
-                                <figcaption><a href="#">Dominik D'Ville</a></figcaption>
+                                <figcaption><a >Dominik D'Ville</a></figcaption>
                                 <img className="comment-pfp" src={friend100}></img>
                                 </figure>
                             </th>
@@ -478,9 +488,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(4)}>
                                 <figure>
-                                <figcaption><a href="#">spenser</a></figcaption>
+                                <figcaption><a >spenser</a></figcaption>
                                 <img className="comment-pfp" src={friend4}></img>
                                 </figure>
                             </th>
@@ -491,9 +501,9 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(6)}>
                                 <figure>
-                                <figcaption><a href="#">Pwencess Chubby</a></figcaption>
+                                <figcaption><a >Pwencess Chubby</a></figcaption>
                                 <img className="comment-pfp" src={friend6}></img>
                                 </figure>
                             </th>
@@ -507,27 +517,27 @@ const MySpacePage = () => {
                             <tr>
                             <th scope="row">
                                 <figure>
-                                <figcaption><a href="#">.erykah.</a></figcaption>
+                                <figcaption><a >.erykah.</a></figcaption>
                                 <img className="comment-pfp" src={friend5}></img>
                                 </figure>
                             </th>
                             <td>
                                 <h3>4/11/2009 5:37 PM</h3>
-                                <p>i meaannn yui and kotana r probably str8 in the show XD buttttt ur writing is rlly good so fuck da haterz^^ </p>
+                                <p>i meaannn yui and konata r probably str8 in the show XD buttttt ur writing is rlly good so fuck da haterz^^ </p>
                             </td>
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(7)}>
                                 <figure>
-                                <figcaption><a href="#">~JUST LET IT BE~</a></figcaption>
+                                <figcaption><a >~JUST LET IT BE~</a></figcaption>
                                 <img className="comment-pfp" src={friend7}></img>
                                 </figure>
                             </th>
                             <td>
                                 <h3>4/10/2009 4:22 PM</h3>
                                 <p>  I just gave you a sticker for your profile.<br></br>
-                                <a className="comment-link" href="#">Click here to view it full size and send me one back!</a>           
+                                <a onClick={() => navigateTo('/love')} className="comment-link" >I love your fic btw ~~</a>           
                                 </p>
                             </td>
                             </tr>
@@ -543,16 +553,16 @@ const MySpacePage = () => {
 
             <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Safety Tips</a></li>
-                <li><a href="#">Contact Myspace</a></li>
-                <li><a href="#">Report Inappropriate Content</a></li>
-                <li><a href="#">Promote!</a></li>
-                <li><a href="#">Advertise</a></li>
-                <li id="last"><a href="#">MySpace International</a></li>
+                <li><a >About</a></li>
+                <li><a >FAQ</a></li>
+                <li><a >Terms</a></li>
+                <li><a >Privacy</a></li>
+                <li><a >Safety Tips</a></li>
+                <li><a >Contact Myspace</a></li>
+                <li><a >Report Inappropriate Content</a></li>
+                <li><a >Promote!</a></li>
+                <li><a >Advertise</a></li>
+                <li id="last"><a >MySpace International</a></li>
             </ul>
             </nav>
 

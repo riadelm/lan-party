@@ -1,6 +1,7 @@
 import React, { useEffect }from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./DeathPage.css";
+import HomeIcon from './popups/homebtn/home';
 import death from "../assets/death/Death Image rough.png";
 import wound from "../assets/death/Scar Remodeled.png";
 
@@ -19,6 +20,7 @@ const DeathPage = () => {
 
     return (
         <div className="death-container">
+            <HomeIcon />
             <img src={death} className="background" />
             <svg class="hover-mask" width="0" height="0" style={{border: "3px solid black", zIndex:1002}}>
                 <defs>

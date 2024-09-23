@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./IdentityPage.css";
+import HomeIcon from './popups/homebtn/home';
 import ImagePopUp from "./popups/sex/imagePopUp";
-import fb from "../assets/identity/FaceBook Page 2.png"
+import fb from "../assets/identity/FaceBook Page Updated.png"
 import virus from "../assets/sex/Porn Virus 2.gif"
 
 
@@ -42,6 +43,7 @@ const IdentityPage = () => {
 
     return (
         <div className="id-container">
+            <HomeIcon />
              {showVirus && (
                 <ImagePopUp popUpTitle="!! PORN VIRUS !!" imageUrl={virus}/>
             )}

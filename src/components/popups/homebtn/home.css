@@ -1,0 +1,17 @@
+.home-icon {
+    position: fixed;
+    top: 1%;
+    right: 0.5%;
+    z-index: 10000;
+    color: #000; /* Change color to fit your design */
+    width: 40px;
+    transition: all 0.5s;
+  }
+  
+  .home-icon:hover {
+    position: fixed;
+    top: 1%;
+    right: 0.5%;
+    filter: drop-shadow(rgb(255, 0, 0) 0px 0px 3px);
+    cursor: pointer;
+  }

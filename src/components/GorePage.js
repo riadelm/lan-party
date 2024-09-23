@@ -1,16 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./GorePage.css";
+import HomeIcon from './popups/homebtn/home';
+import LoadingScreen from "./popups/loading/loading"
+import loadingGif from "../assets/homepage/loading/loadingbar1.gif"
 import gif1 from "../assets/death/Gore 1.gif"
 import gif2 from "../assets/death/Gore 2.gif"
 import gif3 from "../assets/death/Gore 6.gif"
 import gif4 from "../assets/death/Gore 4.gif"
 import gif5 from "../assets/death/Gore 5.gif"
+import gif6 from "../assets/death/Gore 10.gif"
+import gif7 from "../assets/death/Gore 8.gif"
+import gif8 from "../assets/death/Gore 7.gif"
 import png1 from "../assets/death/Click-Thru Gore 2.png"
 import png2 from "../assets/death/Click-Thru Gore 3.png"
 import png3 from "../assets/death/Click-Thru Gore 4.png"
 import png4 from "../assets/death/Click-Thru Gore 5.png"
 import png5 from "../assets/death/Click-Thru Gore 8.png"
+import png6 from "../assets/death/Click-Thru Gore 7.png"
+import png7 from "../assets/death/Click-Thru Gore 6.png"
+import png8 from "../assets/death/Click-Thru Gore 1.png"
 
 const GorePage = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,6 +27,16 @@ const GorePage = () => {
     const [isClickable, setIsClickable] = useState(true);
     const imageRef = useRef(null); // Reference to the foreground image
     const navigate = useNavigate();
+    const [showLoading, setShowLoading] = useState(false);
+
+    const navigateTo = (path) => {
+        setShowLoading(true);
+         setTimeout(() => {
+          setShowLoading(false); // Hide loading screen
+          navigate(path);        // Navigate to the target path
+      }, 10000);
+
+    };
     let moveTimer;
 
     // Ensure scroll to the top when component mounts
@@ -26,13 +45,10 @@ const GorePage = () => {
     }, []);
 
     // Function to navigate to another page
-    const navigateTo = (path) => {
-        navigate(path);
-    };
 
     // Gifs and pngs arrays
-    const gifs = [gif1, gif2, gif3, gif4, gif5];
-    const pngs = [png1, png2, png3, png4, png5];
+    const gifs = [gif1, gif6, gif2, gif3, gif8, gif7, gif4, gif5];
+    const pngs = [png1, png6, png2, png3, png8, png7, png4, png5];
 
     // Function to handle foreground image movement on hover
     const handleMouseEnter = () => {
@@ -122,6 +138,12 @@ const GorePage = () => {
 
     return (
         <div className="gore-container" onMouseMove={handleMouseMove}>
+             {showLoading && <LoadingScreen
+                color= "black"
+                loadingGif={loadingGif}
+                width= "10vw"
+                />}
+            <HomeIcon />
             <img src={gifs[currentIndex]} alt="Background Gif" className="background-gif" />
             <img
                 ref={imageRef}
