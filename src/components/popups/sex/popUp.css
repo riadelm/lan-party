@@ -1,16 +1,16 @@
 .virus-popup {
     z-index: 90;
-    width: 50%;
+    width: 100%;
     height: auto;
     padding: 0;
     position: fixed; /* Keep the modal fixed relative to the viewport */
     bottom: 0px; /* Start positioning from the vertical center */
     right: 0px; /* Start positioning from the horizontal center */
-    pointer-events: none;
   }
 
   .virus-popup-image {
     width: 100%;
     height: auto;
+    cursor: pointer;
     /* display: block; */
   }

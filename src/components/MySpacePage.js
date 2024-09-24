@@ -41,17 +41,25 @@ import popupimg6 from "../assets/myspacepage/im the girl.jpg"
 import popupimg7 from "../assets/myspacepage/love is like....gif"
 import popupimg8 from "../assets/myspacepage/tupac quote.jpg"
 import popupimgsys1 from "../assets/myspacepage/warning message cropped.png"
-import luckyStarTheme from "../assets/audio/lucky.mp3"
+import popupimgsys2 from "../assets/myspacepage/warning message 2.png"
+import popupimgsys3 from "../assets/myspacepage/warning message 1.png"
+import luckyStarTheme from "../assets/audio/Lucky Star Intro (softer).mp3"
 import click from '../assets/audio/click.mp3'
 
 
 
 
 const MySpacePage = () => {
+    const clickAudio = useRef(null);
+
+    useEffect(() => {
+    clickAudio.current = new Audio(click);
+    }, []);
+
     const playClickSound = () => {
-        const audio = new Audio(click); // Ensure this path is correct
-        audio.play();
-      };    
+    clickAudio.current.currentTime = 0; // Reset to start
+    clickAudio.current.play();
+    };    
 
     const audioRef = useRef(null);
 
@@ -175,7 +183,7 @@ const MySpacePage = () => {
                         <section className="contact-box">
                         <h2>Contacting <span className="profile-name">sarah san&lt;3 (✿◠‿◠)</span></h2>
 
-                        <figure className="contact-images">
+                        <figure className="contact-images" onClick={() => handleClick(11)}>
                             <img src={sendMailIcon} alt="Send Message"></img>
                             <img src={forwardMailIcon} alt="Forward to Friend"></img>
                             <img src={addFriendIcon} alt="Add to Friends"></img>
@@ -185,6 +193,7 @@ const MySpacePage = () => {
                             <img src={addToGroupIcon} alt="Add to Group"></img>
                             <img src={rankUserIcon} alt="Rank User"></img>
                         </figure>
+                        {activePopupId === 11 && <SystemPopUp popUpTitle="Pics" imageUrl={popupimgsys3} onClose={handleClose} />}
                         </section>
                         
                         <section className="myspace-url-box">
@@ -282,7 +291,8 @@ const MySpacePage = () => {
                         )}
 
                         </p>
-                        <img className="status-pic" src={snsd}></img>
+                        <img className="status-pic" src={snsd} onClick={() => handleClick(12)}></img>
+                        {activePopupId === 12 && <SystemPopUp popUpTitle="Pics" imageUrl={popupimgsys2} onClose={handleClose} />}
                         </section>
 
                         <section className="friends">
@@ -515,7 +525,7 @@ const MySpacePage = () => {
                             </tr>
 
                             <tr>
-                            <th scope="row">
+                            <th scope="row" onClick={() => handleClick(5)}>
                                 <figure>
                                 <figcaption><a >.erykah.</a></figcaption>
                                 <img className="comment-pfp" src={friend5}></img>

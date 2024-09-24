@@ -22,7 +22,7 @@
     transform: translateX(-50%);
     width: 13vw; /* Adjust size as needed */
     height: auto;
-    transition: transform 0.3s ease-in-out, box-shadow 0.1s ease;
+    transition: all 0.5s ease;
   }
   
   .click-button:hover {

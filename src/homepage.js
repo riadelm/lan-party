@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './homepage.css';
 import images from './utils/importAllHomepageImages';
 import clickImage from './assets/homepage/buttons/click.png'
-import forumImage from './assets/homepage/buttons/forum.png'
 import logoGif from './assets/homepage/buttons/logo.gif'
 import loading1 from './assets/homepage/loading/loadingbar1.gif';
 import loading2 from './assets/homepage/loading/loadingbar2.gif';
@@ -35,9 +34,15 @@ function HomePage() {
   const pixelatedImageRef = useRef(null);
 
 
+  const clickAudio = useRef(null);
+
+  useEffect(() => {
+    clickAudio.current = new Audio(click);
+  }, []);
+
   const playClickSound = () => {
-    const audio = new Audio(click); // Ensure this path is correct
-    audio.play();
+    clickAudio.current.currentTime = 0; // Reset to start
+    clickAudio.current.play();
   };
 
 
@@ -52,7 +57,7 @@ function HomePage() {
     if (rotateImages) {
         const intervalId = setInterval(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 2000); // Change image every 2 seconds
+        }, 1500); // Change image every 2 seconds
 
         return () => clearInterval(intervalId); // Cleanup interval on component unmount
     }
@@ -79,7 +84,7 @@ function HomePage() {
 
   useEffect(() => {
     if (rotateImages) {
-        const steps = 15; // Number of steps (2 seconds / 0.5 second intervals)
+        const steps = 10; // Number of steps (2 seconds / 0.5 second intervals)
         const stepSize = 50 / steps; // Pixel size increment per step
 
         let step = 0;
@@ -92,7 +97,7 @@ function HomePage() {
             clearInterval(intervalId);
             setPixelSize(0); // Reset pixel size for the next image
         }
-        }, 100);
+        }, 150);
 
         return () => clearInterval(intervalId); // Cleanup interval on component unmount
     }
@@ -142,23 +147,6 @@ function HomePage() {
       }, 6000); // Show first loading gif for 7 seconds
     }, 1000); // Keep pixelSize 50 for 1 seconds
   };
-
-  useEffect(() => {
-    const moveCursor = (e) => {
-      if (cursorRef.current) {
-        cursorRef.current.style.left = `${e.clientX}px`;
-        cursorRef.current.style.top = `${e.clientY}px`;
-      }
-    };
-
-    if (showCustomCursor) {
-      document.addEventListener('mousemove', moveCursor);
-    } else {
-      document.removeEventListener('mousemove', moveCursor);
-    }
-
-    return () => document.removeEventListener('mousemove', moveCursor);
-  }, [showCustomCursor]);
 
   
   return (
@@ -230,13 +218,6 @@ function HomePage() {
           className="custom-cursor"
           style={{ backgroundImage: `url(${cursorGif})` }}
         ></div>
-      )}
-      {!showLoading1 && !showLoading2 && !showLoading3 && !showLoading4 && !showLoading5 && !showRoundLoading && (
-        <img
-            src={forumImage}
-            alt="Click Button"
-            className="forum-button"
-        />
       )}
       {!showLoading1 && !showLoading2 && !showLoading3 && !showLoading4 && !showLoading5 && !showRoundLoading && (
         <img

@@ -44,6 +44,7 @@
     text-align: center;
     margin-bottom: 20px; 
     object-fit: contain;
+    cursor: pointer;
   }
 
   .prn-logo img {
@@ -67,6 +68,8 @@
 
   .side-gif {
     width: 100%;
+    margin-bottom: 1vh;
+    cursor: pointer;
   }
 
   .content-columns {
@@ -102,24 +105,30 @@
     text-shadow: 1px 2px 0 #0000ff; 
     font-weight: 200;
     font-size: 13px;
+    cursor: pointer;
   }
   
   .dancer {
     position: fixed;
     top: 0;
-    height: 70%;
+    height: 100%;
     width: auto;
     z-index: 999;
+    pointer-events: none;
   }
 
   .dancer img {
-    width: 100%;
+    width: 110%;
     transition: opacity 1s ease-in-out; 
     pointer-events: none;
   }
 
+  .full-screen-gif {
+    cursor: pointer;
+  }
+
   .full-screen-gif:hover {
-    filter: drop-shadow(rgb(255, 255, 255) 0px 0px 3px);
+    cursor: pointer;
   }
 
 .fade-in {
@@ -207,6 +216,5 @@
 
   .dm:hover {
     box-shadow: 0 0 15px 15px red;
-    filter: scale(1.3);
     cursor: pointer;
   }

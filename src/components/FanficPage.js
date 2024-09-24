@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./FanficPage.css";
 import TextPopUp from "./popups/fanfic/textPopUp"
@@ -39,10 +39,16 @@ import click from '../assets/audio/click.mp3'
 
 const FanficPage = () => {
 
+    const clickAudio = useRef(null);
+
+    useEffect(() => {
+    clickAudio.current = new Audio(click);
+    }, []);
+
     const playClickSound = () => {
-        const audio = new Audio(click); // Ensure this path is correct
-        audio.play();
-      };  
+    clickAudio.current.currentTime = 0; // Reset to start
+    clickAudio.current.play();
+    };
 
     useEffect(() => {
         // Scroll to top of the page when component is mounted
@@ -53,6 +59,7 @@ const FanficPage = () => {
     const [showLoading, setShowLoading] = useState(false);
 
     const navigateTo = (path) => {
+        playClickSound();
         setShowLoading(true);
          setTimeout(() => {
           setShowLoading(false); // Hide loading screen
@@ -70,6 +77,7 @@ const FanficPage = () => {
     const popupOffset = 3;
 
     const handlePopupClick = (e, id) => {
+        playClickSound();
         setTextContent(textContent); 
         if (e && e.preventDefault) {
             e.preventDefault(); // Prevent page reload on form submission
@@ -381,9 +389,10 @@ const FanficPage = () => {
                                         <option value="2">Chapter 2</option>
                                         <option value="2">Chapter 3</option>
                                         <option value="3"selected="selected">Chapter 4</option>
-                                        <option value="#">Chapter 5</option>
+                                        <option value="400">Chapter 5</option>
                                     </select>
                                     {activePopupId === 2 && <TextPopUp popUpTitle="Link is Dead" textContent="Link is dead. You can’t go back that far."  onClose={handlePopupClose} />}
+                                    {activePopupId === 400 && <TextPopUp popUpTitle="Take your time" textContent="Take your time. Scroll down"  onClose={handlePopupClose} />}
                                 </div>
                                 <div className='ff-chapter'>
                                     <p>Kagami was sweating like crazy in class the next day, she couldn’t stop thinking about that blue-haired demon. All because Konata asked her that damned question:<br/><br/>

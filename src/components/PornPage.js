@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import "./PornPage.css";
 import HomeIcon from './popups/homebtn/home';
 import ScrollingText from './popups/sex/text';
-import ImagePopUp from "./popups/sex/imagePopUp"
 import WebcamPopup from "./popups/sex/webcam"
 import sound from "../assets/audio/Porn Page Audio.mp3"
 import logo from "../assets/sex/logo2.png"
@@ -52,9 +51,49 @@ import dn4 from "../assets/sex/Dancers/dancers 4.gif"
 import dn5 from "../assets/sex/Dancers/dancers 5.gif"
 import virus from "../assets/sex/Porn Virus 2.gif"
 import dm from "../assets/sex/DM.gif"
+import click from '../assets/audio/click.mp3'
+import basso from '../assets/audio/basso.mp3'
+import dmsound from '../assets/audio/FaceBook DM Noise.mp3'
+
+
 
 
 const PornPage = () => {
+
+    const clickAudio = useRef(null);
+
+    useEffect(() => {
+    clickAudio.current = new Audio(click);
+    }, []);
+
+    const playClickSound = () => {
+    clickAudio.current.currentTime = 0; // Reset to start
+    clickAudio.current.play();
+    };
+
+    const DMAudio = useRef(null);
+
+    useEffect(() => {
+        DMAudio.current = new Audio(dmsound);
+    }, []);
+
+    const playDMSound = () => {
+        DMAudio.current.currentTime = 0; // Reset to start
+        DMAudio.current.play();
+    };
+
+    const bassoAudio = useRef(null);
+
+    useEffect(() => {
+        bassoAudio.current = new Audio(basso);
+    }, []);
+
+    const playBassoSound = () => {
+        bassoAudio.current.currentTime = 0; // Reset to start
+        bassoAudio.current.play();
+    };
+
+
     const audioRef = useRef(null);
 
     useEffect(() => {
@@ -101,16 +140,8 @@ const PornPage = () => {
     const [imageUrl, setImageUrl] = useState("");
     const [showWebcam, setShowWebcam] = useState(false);
 
-    const handlePopupClick = (id) => {
-        setImageUrl({virus}); // Replace with your image URL
-        setActivePopupId(id);
-    };
-    
-    const handlePopupClose = () => {
-        setActivePopupId(null);
-    };
-
     const handleDMClick = () => {
+        playClickSound();
         setShowWebcam(true);
         setShowDM(false);
     }
@@ -119,8 +150,9 @@ const PornPage = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
+          playDMSound();
           setShowDM(true);
-        }, 10000); // 10 seconds
+        }, 50000); // 10 seconds
     
         // Cleanup the timer if the component is unmounted
         return () => clearTimeout(timer);
@@ -291,22 +323,22 @@ const PornPage = () => {
             <ScrollingText />
            <div className="prn-sidebar sb-left">
                 {/* Left Sidebar Content */}
-                <img className='side-gif sg-left' src={sidegif1}></img>
-                <img className='side-gif sg-left' src={sidegif2}></img>
-                <img className='side-gif sg-left' src={sidegif3}></img>
-                <img className='side-gif sg-left' src={sidegif4}></img>
+                <img className='side-gif sg-left' src={sidegif1} onClick={() => playBassoSound()}></img>
+                <img className='side-gif sg-left' src={sidegif2} onClick={() => playBassoSound()}></img>
+                <img className='side-gif sg-left' src={sidegif3} onClick={() => playBassoSound()}></img>
+                <img className='side-gif sg-left' src={sidegif4} onClick={() => playBassoSound()}></img>
             </div>
             <div className="prn-main-content">
                 {/* Main Content */}
                 <div className="prn-logo">
-                    <img src={logo}></img>
-                    <h1>Thank you for joining the community!</h1>
+                    <img src={logo} onClick={() => playBassoSound()}></img>
+                    <h1 onClick={() => playBassoSound()}>Thank you for joining the community!</h1>
                 </div>
                 <div className="content-columns">
                     <div className="column left-column">
                     {tnLeft.map((data, index) => (
                         <div className="thumbnail-container">
-                            <img className="thumbnail-pic" src={data.imgSrc}></img>
+                            <img className="thumbnail-pic" src={data.imgSrc} onClick={() => playBassoSound()}></img>
                             <h1>{data.title}</h1>
                         </div>
                     ))}
@@ -315,28 +347,28 @@ const PornPage = () => {
                         {/* Middle Column Content */}
                         {tnMiddle.map((data, index) => (
                         <div className="thumbnail-container">
-                            <img className="thumbnail-pic" src={data.imgSrc}></img>
+                            <img className="thumbnail-pic" src={data.imgSrc} onClick={() => playBassoSound()}></img>
                             <h1>{data.title}</h1>
                         </div>
                      ))}
                       <div className="prn-pagination-bar">
                     <button 
                     className="prn-pagination-button"
-                    onClick={() => navigateTo('/death')}
+                    onClick={() => playBassoSound()}
                     >
                         Previous &lt;&lt;
                     </button>
 
                     {/* Display current page numbers */}
                     <span className="prn-pagination-pages">
-                    <span className="prn-pagination-number"onClick={() => navigateTo('/suicide')}>[1]</span>
-                    <span className="prn-pagination-dots" onClick={() => navigateTo('/suicide')}>....</span>
-                    <span className="prn-pagination-number" onClick={() => navigateTo('/identity')}>[6392]</span>
+                    <span className="prn-pagination-number" onClick={() => playBassoSound()}>[1]</span>
+                    <span className="prn-pagination-dots" onClick={() => playBassoSound()}>....</span>
+                    <span className="prn-pagination-number" onClick={() => playBassoSound()}>[6392]</span>
                     </span>
 
                     <button 
                     className="prn-pagination-button"
-                    onClick={() => navigateTo('/identity')}
+                    onClick={() => playBassoSound()}
                     >
                         Next &gt;&gt;
                     </button>
@@ -346,7 +378,7 @@ const PornPage = () => {
                         {/* Right Column Content */}
                         {tnRight.map((data, index) => (
                         <div className="thumbnail-container">
-                            <img className="thumbnail-pic" src={data.imgSrc}></img>
+                            <img className="thumbnail-pic" src={data.imgSrc} onClick={() => playBassoSound()}></img>
                             <h1>{data.title}</h1>
                         </div>
                     ))}
@@ -355,16 +387,15 @@ const PornPage = () => {
             </div>
             <div className="prn-sidebar sb-right">
                 {/* Right Sidebar Content */}
-                <img className='side-gif sg-right' src={sidegif5}></img>
-                <img className='side-gif sg-right' src={sidegif6}></img>
-                <img className='side-gif sg-right' src={sidegif7}></img>
-                <img className='side-gif sg-right' src={sidegif8}></img>
+                <img className='side-gif sg-right' src={sidegif5} onClick={() => playBassoSound()}></img>
+                <img className='side-gif sg-right' src={sidegif6} onClick={() => playBassoSound()}></img>
+                <img className='side-gif sg-right' src={sidegif7} onClick={() => playBassoSound()}></img>
+                <img className='side-gif sg-right' src={sidegif8} onClick={() => playBassoSound()}></img>
             </div>
-            <div className='dancer' onClick={() => handlePopupClick(1)}>
-            {!isPaused && <img src={gifArray[currentGifIndex]} alt="Dancing GIF"
+            <div className='dancer' onClick={() => playBassoSound()}>
+            {!isPaused && <img src={gifArray[currentGifIndex]} alt="Dancing GIF" onClick={() => playBassoSound()}
               className={`full-screen-gif ${isFading ? 'fade-out' : 'fade-in'}`} />}
             </div>
-            {activePopupId === 1 && <ImagePopUp popUpTitle="!! PORN VIRUS !!" imageUrl={virus} onClose={handlePopupClose} />}
             {/* <div className='banner'>
                 <img className="banner1" src={banner1}></img>
             </div> */}

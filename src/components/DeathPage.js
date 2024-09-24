@@ -1,11 +1,23 @@
-import React, { useEffect }from 'react';
+import React, { useEffect, useRef }from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./DeathPage.css";
 import HomeIcon from './popups/homebtn/home';
 import death from "../assets/death/Death Image rough.png";
 import wound from "../assets/death/Scar Remodeled.png";
+import click from '../assets/audio/click.mp3'
 
 const DeathPage = () => {
+
+    const clickAudio = useRef(null);
+
+    useEffect(() => {
+    clickAudio.current = new Audio(click);
+    }, []);
+
+    const playClickSound = () => {
+    clickAudio.current.currentTime = 0; // Reset to start
+    clickAudio.current.play();
+    };
 
     useEffect(() => {
         // Scroll to top of the page when component is mounted
@@ -15,6 +27,7 @@ const DeathPage = () => {
     const navigate = useNavigate();
 
     const navigateTo = (path) => {
+        playClickSound();
         navigate(path); 
     };
 

@@ -290,6 +290,7 @@ Contact Box
     margin: 0;
     margin-top: 5px;
     margin-left: 10px;
+    cursor: pointer;
   }
   
   /*
@@ -421,6 +422,7 @@ Blog
     width: 30%;
     margin-right: auto;
     margin-left: auto;
+    cursor: pointer;
   }
 
 /*
@@ -527,8 +529,9 @@ Friend Space
     display: block;
     margin: auto;
     border:0;
-	width:90%;
-	height:auto;
+    width:90%;
+    height:auto;
+    cursor: pointer;
   }
   
   .friends-list-link {
@@ -596,6 +599,7 @@ Friend Space
   
   .comment-wall figcaption,
   .comment-wall figure {
+    cursor: pointer;
     margin: 0;
   }
   

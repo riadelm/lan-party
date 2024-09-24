@@ -20,6 +20,7 @@ import png5 from "../assets/death/Click-Thru Gore 8.png"
 import png6 from "../assets/death/Click-Thru Gore 7.png"
 import png7 from "../assets/death/Click-Thru Gore 6.png"
 import png8 from "../assets/death/Click-Thru Gore 1.png"
+import click from '../assets/audio/click.mp3'
 
 const GorePage = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,7 +30,19 @@ const GorePage = () => {
     const navigate = useNavigate();
     const [showLoading, setShowLoading] = useState(false);
 
+    const clickAudio = useRef(null);
+
+    useEffect(() => {
+    clickAudio.current = new Audio(click);
+    }, []);
+
+    const playClickSound = () => {
+    clickAudio.current.currentTime = 0; // Reset to start
+    clickAudio.current.play();
+    };
+
     const navigateTo = (path) => {
+        playClickSound();
         setShowLoading(true);
          setTimeout(() => {
           setShowLoading(false); // Hide loading screen
@@ -60,13 +73,13 @@ const GorePage = () => {
                 imageRef.current.style.transition = 'transform 1s ease';
                 imageRef.current.style.transform = 'translate(-50%, -50%)';
             }
-        }, 5000);
+        }, 60000);
     };
 
     // Function to handle image click
     const handleImageClick = () => {
         if (!isClickable) return; 
-
+        playClickSound();
         clearTimeout(moveTimer); // Ensure the timer is cleared
         if (imageRef.current) {
             imageRef.current.style.transition = 'none'; // Disable transition

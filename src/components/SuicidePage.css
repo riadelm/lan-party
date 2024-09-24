@@ -19,6 +19,7 @@
 }
 
 .sh-table-content table {
+    margin-top: 5vh;
     filter: drop-shadow(rgb(255, 255, 255) 0px 0px 3px);
 }
 
@@ -42,6 +43,11 @@
     padding-left: 1vw;
     padding-right: 1vw;
     cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sh-image:hover {
+    filter: drop-shadow(red 0px 0px 3px);
 }
 
 .sh-content-col {
