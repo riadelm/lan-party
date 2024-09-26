@@ -22,12 +22,12 @@
     transform: translateX(-50%);
     width: 13vw; /* Adjust size as needed */
     height: auto;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
+    cursor: pointer;
   }
   
   .click-button:hover {
     box-shadow: 0 0 15px 15px red;
-    cursor: pointer;
   }
   
   .click-button:active {

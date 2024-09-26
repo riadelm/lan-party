@@ -6,12 +6,12 @@ import LoadingScreen from "./popups/loading/loading"
 import loadingGif from "../assets/homepage/loading/loadingbar1.gif"
 import gif1 from "../assets/death/Gore 1.gif"
 import gif2 from "../assets/death/Gore 2.gif"
-import gif3 from "../assets/death/Gore 6.gif"
+import gif3 from "../assets/death/Gore 3.gif"
 import gif4 from "../assets/death/Gore 4.gif"
 import gif5 from "../assets/death/Gore 5.gif"
-import gif6 from "../assets/death/Gore 10.gif"
-import gif7 from "../assets/death/Gore 8.gif"
-import gif8 from "../assets/death/Gore 7.gif"
+import gif6 from "../assets/death/Gore 6.gif"
+import gif7 from "../assets/death/Gore 7.gif"
+import gif8 from "../assets/death/Gore 8.gif"
 import png1 from "../assets/death/Click-Thru Gore 2.png"
 import png2 from "../assets/death/Click-Thru Gore 3.png"
 import png3 from "../assets/death/Click-Thru Gore 4.png"
@@ -60,7 +60,7 @@ const GorePage = () => {
     // Function to navigate to another page
 
     // Gifs and pngs arrays
-    const gifs = [gif1, gif6, gif2, gif3, gif8, gif7, gif4, gif5];
+    const gifs = [gif1, gif2, gif3, gif4, gif5, gif6, gif7, gif8];
     const pngs = [png1, png6, png2, png3, png8, png7, png4, png5];
 
     // Function to handle foreground image movement on hover

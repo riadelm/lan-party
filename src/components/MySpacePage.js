@@ -45,6 +45,7 @@ import popupimgsys2 from "../assets/myspacepage/warning message 2.png"
 import popupimgsys3 from "../assets/myspacepage/warning message 1.png"
 import luckyStarTheme from "../assets/audio/Lucky Star Intro (softer).mp3"
 import click from '../assets/audio/click.mp3'
+import basso from '../assets/audio/basso.mp3'
 
 
 
@@ -60,6 +61,17 @@ const MySpacePage = () => {
     clickAudio.current.currentTime = 0; // Reset to start
     clickAudio.current.play();
     };    
+
+    const bassoAudio = useRef(null);
+
+    useEffect(() => {
+        bassoAudio.current = new Audio(basso);
+    }, []);
+
+    const playBassoSound = () => {
+        bassoAudio.current.currentTime = 0; // Reset to start
+        bassoAudio.current.play();
+    };
 
     const audioRef = useRef(null);
 
@@ -130,20 +142,20 @@ const MySpacePage = () => {
         </nav>
         <nav className="navbar">
             <ul>
-            <li><a  >Home</a></li>
-            <li><a  >Browse</a></li>
-            <li><a  >Search</a></li>
-            <li><a  >Invite</a></li>
-            <li><a  >Film</a></li>
-            <li><a  >Mail</a></li>
-            <li><a  >Blog</a></li>
-            <li><a  >Favorites</a></li>
-            <li><a  >Forum</a></li>
-            <li><a  >Groups</a></li>
-            <li><a  >Events</a></li>
-            <li><a  >Videos</a></li>
-            <li><a  >Music</a></li>
-            <li><a  >Classifieds</a></li>
+            <li><a  onClick={() => playBassoSound()}>Home</a></li>
+            <li><a  onClick={() => playBassoSound()}>Browse</a></li>
+            <li><a  onClick={() => playBassoSound()}>Search</a></li>
+            <li><a  onClick={() => playBassoSound()}>Invite</a></li>
+            <li><a  onClick={() => playBassoSound()}>Film</a></li>
+            <li><a  onClick={() => playBassoSound()}>Mail</a></li>
+            <li><a  onClick={() => playBassoSound()}>Blog</a></li>
+            <li><a  onClick={() => playBassoSound()}>Favorites</a></li>
+            <li><a  onClick={() => playBassoSound()}>Forum</a></li>
+            <li><a  onClick={() => playBassoSound()}>Groups</a></li>
+            <li><a  onClick={() => playBassoSound()}>Events</a></li>
+            <li><a  onClick={() => playBassoSound()}>Videos</a></li>
+            <li><a  onClick={() => playBassoSound()}>Music</a></li>
+            <li><a  onClick={() => playBassoSound()}>Classifieds</a></li>
             </ul>
         </nav>
             <div className="page-content-container">
@@ -352,7 +364,7 @@ const MySpacePage = () => {
                         </figure>
                     </div>
 
-                    <p className="friends-list-link"><a >View All of <span className="profile-name">sarah san&lt;3 (✿◠‿◠)</span>'s Friends</a></p>
+                    <p className="friends-list-link"><a onClick={() => playBassoSound()}>View All of <span className="profile-name">sarah san&lt;3 (✿◠‿◠)</span>'s Friends</a></p>
                     </section>
 
                     <section className="comment-wall">
@@ -360,7 +372,7 @@ const MySpacePage = () => {
                             <h2 className="main-section-h2"><span className="profile-name">sarah san&lt;3 (✿◠‿◠)</span>'s Friends Comments</h2>
                         </header>
 
-                        <p id="comment-counter"><b>Displaying <span className="focus-highlight">10</span> of <span className="focus-highlight">3092</span> comments (<a  >View/Edit All Comments</a>)</b></p>
+                        <p id="comment-counter"><b>Displaying <span className="focus-highlight">10</span> of <span className="focus-highlight">3092</span> comments (<a  onClick={() => playBassoSound()}>View/Edit All Comments</a>)</b></p>
 
                         <table>
                             <tr>
@@ -562,7 +574,7 @@ const MySpacePage = () => {
             <footer className="footer">
 
             <nav>
-            <ul>
+            <ul onClick={() => playBassoSound()}>
                 <li><a >About</a></li>
                 <li><a >FAQ</a></li>
                 <li><a >Terms</a></li>

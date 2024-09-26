@@ -35,6 +35,7 @@ import compfp4 from "../assets/fanficpage/Edwardluvr1234.png";
 import compfp5 from "../assets/fanficpage/Guest.png";
 import compfp6 from "../assets/fanficpage/Don't Lose Hope.png";
 import click from '../assets/audio/click.mp3'
+import basso from '../assets/audio/basso.mp3'
 
 
 const FanficPage = () => {
@@ -48,6 +49,17 @@ const FanficPage = () => {
     const playClickSound = () => {
     clickAudio.current.currentTime = 0; // Reset to start
     clickAudio.current.play();
+    };
+
+    const bassoAudio = useRef(null);
+
+    useEffect(() => {
+        bassoAudio.current = new Audio(basso);
+    }, []);
+
+    const playBassoSound = () => {
+        bassoAudio.current.currentTime = 0; // Reset to start
+        bassoAudio.current.play();
     };
 
     useEffect(() => {
@@ -216,15 +228,15 @@ const FanficPage = () => {
                 <div className="container">
                     <div className="span-24">
                         <ul>
-                        <li><a onClick={() => playClickSound()} title="Profile">Profile</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Stories">Stories</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Subscriptions">Subscriptions</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Bookmarks">Bookmarks</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Friends">Friends</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Blog">Blog</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Settings">Settings</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Random Story">Random Story</a></li>
-                        <li><a onClick={() => playClickSound()}  title="Winglin Importer">Winglin Importer</a></li>
+                        <li><a onClick={() => playBassoSound()} title="Profile">Profile</a></li>
+                        <li><a onClick={() => playBassoSound()}  title="Stories">Stories</a></li>
+                        <li><a onClick={() => playBassoSound()}  title="Subscriptions">Subscriptions</a></li>
+                        <li><a onClick={() => playBassoSound()}  title="Bookmarks">Bookmarks</a></li>
+                        <li><a onClick={() => playBassoSound()}  title="Friends">Friends</a></li>
+                        <li><a onClick={() => playBassoSound()} title="Blog">Blog</a></li>
+                        <li><a onClick={() => playBassoSound()}  title="Settings">Settings</a></li>
+                        <li><a onClick={() => playBassoSound()}  title="Random Story">Random Story</a></li>
+                        <li><a onClick={() => playBassoSound()}  title="Winglin Importer">Winglin Importer</a></li>
                         </ul>
                     </div>
                 </div>
@@ -238,10 +250,10 @@ const FanficPage = () => {
                         <a  title="lucky-star-fanfic.com"><img src={logo} className="logo-ff" alt="lucky-star-fanfic.com"/></a>
                     
                             <div className="hdr_left_btn_grp">
-                                <div className="hdr_btn writing">
+                                <div onClick={() => playBassoSound()} className="hdr_btn writing">
                                     <a  title="Start Writing">Start Writing</a>
                                 </div>
-                                <div className="hdr_btn browsing">
+                                <div onClick={() => playBassoSound()} className="hdr_btn browsing">
                                     <a  title="Browse Topics">Browse Topics</a>
                                  </div>
                             </div>
@@ -254,11 +266,11 @@ const FanficPage = () => {
                         <div className="hdr_right">
                             <div className="top_rt_hdr">
                                 <ul>
-                                    <li><a  title="FAQ">FAQ</a></li>
+                                    <li><a onClick={() => playBassoSound()} title="FAQ">FAQ</a></li>
                                     <li>|</li>
-                                    <li><a  title="Contact">Contact</a></li>
+                                    <li><a onClick={() => playBassoSound()} title="Contact">Contact</a></li>
                                     <li>|</li>
-                                    <li><a  title="About">About</a></li>
+                                    <li><a onClick={() => playBassoSound()} title="About">About</a></li>
                                 </ul>
                                 <form action="#" id="cse-search-box" className="search_form" onSubmit={(e) => handlePopupClick(e, 1)}>
                                     <input type="hidden" name="cx" value="partner-pub-8482723550199408:wfkhzi-cpj7"/>
@@ -301,10 +313,10 @@ const FanficPage = () => {
                 <div class="container">
                     <div class="span-24">
                     <ul class="fanfics show_fanfics">
-                        <li><a onClick={() => playClickSound()}>Latest</a></li>
-                        <li><a onClick={() => playClickSound()}>Newest</a></li>
-                        <li><a onClick={() => playClickSound()}>Completed</a></li>
-                        <li><a onClick={() => playClickSound()}>Alphabetical</a></li>
+                        <li><a onClick={() => playBassoSound()}>Latest</a></li>
+                        <li><a onClick={() => playBassoSound()}>Newest</a></li>
+                        <li><a onClick={() => playBassoSound()}>Completed</a></li>
+                        <li><a onClick={() => playBassoSound()}>Alphabetical</a></li>
                     </ul>
                     <ul>
                     <li>&nbsp;</li>
@@ -365,17 +377,18 @@ const FanficPage = () => {
                             <div class="content">
                                 <h1 class="story_title" name="story_title">Chapter 4: Never Sick of You</h1>
                                     <p>
-                                        by <strong><a >starahhsan12</a></strong>
+                                        by <strong><a onClick={() => handleClick(401)}>starahhsan12</a></strong>
+                                        {activePopupId === 401 && <TextPopUp popUpTitle="Take your time" textContent="Oopsie :/ Sarah San deactivated her account :/"  onClose={handlePopupClose} />}
                                         <br/>
                         
                                         Tags &nbsp;
-                                        <a >angst</a> &nbsp;
-                                        <a >konata</a> &nbsp;
-                                        <a >comedy</a> &nbsp;
-                                        <a >romance</a> &nbsp;
-                                        <a >kissing</a> &nbsp;
-                                        <a >luckystar</a> &nbsp;
-                                        <a >yuri</a> &nbsp;
+                                        <a onClick={() => playBassoSound()}>angst</a> &nbsp;
+                                        <a onClick={() => playBassoSound()}>konata</a> &nbsp;
+                                        <a onClick={() => playBassoSound()}>comedy</a> &nbsp;
+                                        <a onClick={() => playBassoSound()}>romance</a> &nbsp;
+                                        <a onClick={() => playBassoSound()}>kissing</a> &nbsp;
+                                        <a onClick={() => playBassoSound()}>luckystar</a> &nbsp;
+                                        <a onClick={() => playBassoSound()}>yuri</a> &nbsp;
                                         {/* style="clear:both" */}
                                         <br/>
                                     </p>

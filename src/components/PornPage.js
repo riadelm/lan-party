@@ -49,16 +49,46 @@ import dn2 from "../assets/sex/Dancers/dancers 2.gif"
 import dn3 from "../assets/sex/Dancers/dancers 3.gif"
 import dn4 from "../assets/sex/Dancers/dancers 4.gif"
 import dn5 from "../assets/sex/Dancers/dancers 5.gif"
-import virus from "../assets/sex/Porn Virus 2.gif"
 import dm from "../assets/sex/DM.gif"
 import click from '../assets/audio/click.mp3'
 import basso from '../assets/audio/basso.mp3'
 import dmsound from '../assets/audio/FaceBook DM Noise.mp3'
 
 
+const preloadAudio = (src) => {
+    const audio = new Audio();
+    audio.src = src;
+  };
+  
+  const preloadAllAudio = () => {
+    preloadAudio(click); // Preload all audio files here
+  };
 
+  const preloadImage = (src) => {
+    const img = new Image();
+    img.src = src;
+    };
+
+const assets = [
+    sidegif1, sidegif2, sidegif3, sidegif4, sidegif5, sidegif6, sidegif7, sidegif8,
+    tn1, tn2, tn3, tn4, tn5, tn6, tn7, tn8, tn9, tn10, tn11, tn12, tn13, tn14, tn15,
+    tn16, tn17, tn18, tn19, tn20, tn21, tn22, tn23, tn24, tn25, tn26, tn27, tn28, tn29, tn30,
+    dn1, dn2, dn3, dn4, dn5
+    ];
+
+  const preloadAllImages = () => {
+    assets.forEach(preloadImage);
+    };
 
 const PornPage = () => {
+
+    useEffect(() => {
+        preloadAllImages();
+      }, []);
+
+    useEffect(() => {
+        preloadAllAudio();
+      }, []);
 
     const clickAudio = useRef(null);
 

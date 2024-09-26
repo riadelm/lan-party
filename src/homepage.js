@@ -16,6 +16,15 @@ import reboot from './assets/homepage/loading/factoryreset.png';
 import cursorGif from './assets/homepage/loading/cursorloading.gif';
 import click from './assets/audio/click.mp3'
 
+const preloadImage = (src) => {
+  const img = new Image();
+  img.src = src;
+};
+
+const preloadAllImages = () => {
+  images.forEach(preloadImage);
+};
+
 function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [pixelSize, setPixelSize] = useState(0);
@@ -150,10 +159,10 @@ function HomePage() {
 
   
   return (
-    <div className={`background ${showCustomCursor ? 'hide-default-cursor' : ''}`} ref={containerRef} style={{ backgroundColor: showWhiteBackground ? 'white' : '' , backgroundImage: showReboot ? `url(${reboot})` : ''}}>
+    <div className={`background ${showCustomCursor ? 'hide-default-cursor' : ''}`} style={{ backgroundColor: showWhiteBackground ? 'white' : '' , backgroundImage: showReboot ? `url(${reboot})` : ''}}>
         {!showWhiteBackground && !showReboot && (
       <ImagePixelated
-        ref={pixelatedImageRef}
+        // ref={pixelatedImageRef}
         src={images[currentImageIndex]}
         width={containerRef.current ? containerRef.current.clientWidth : window.innerWidth}
         height={containerRef.current ? containerRef.current.clientHeight : window.innerHeight}
@@ -211,13 +220,6 @@ function HomePage() {
           alt="Round loading"
           className="round-loading"
         />
-      )}
-      {showCustomCursor && (
-        <div
-          ref={cursorRef}
-          className="custom-cursor"
-          style={{ backgroundImage: `url(${cursorGif})` }}
-        ></div>
       )}
       {!showLoading1 && !showLoading2 && !showLoading3 && !showLoading4 && !showLoading5 && !showRoundLoading && (
         <img
