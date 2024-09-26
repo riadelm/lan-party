@@ -61,7 +61,7 @@ const preloadAudio = (src) => {
   };
   
   const preloadAllAudio = () => {
-    preloadAudio(click); // Preload all audio files here
+    preloadAudio(sound); // Preload all audio files here
   };
 
   const preloadImage = (src) => {

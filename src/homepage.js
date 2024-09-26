@@ -13,7 +13,7 @@ import loading5 from './assets/homepage/loading/loadingbar5.gif';
 // import loading6 from './assets/homepage/loading/loadingbar6.gif';
 import roundloading from './assets/homepage/loading/roundloading2.gif';
 import reboot from './assets/homepage/loading/factoryreset.png';
-import cursorGif from './assets/homepage/loading/cursorloading.gif';
+// import cursorGif from './assets/homepage/loading/cursorloading.gif';
 import click from './assets/audio/click.mp3'
 
 const preloadImage = (src) => {
@@ -25,7 +25,19 @@ const preloadAllImages = () => {
   images.forEach(preloadImage);
 };
 
+const preloadAudio = (src) => {
+  const audio = new Audio();
+  audio.src = src;
+};
+
+const preloadAllAudio = () => {
+  preloadAudio(click); // Preload all audio files here
+};
+
+
 function HomePage() {
+  preloadAllImages();
+  preloadAllAudio();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [pixelSize, setPixelSize] = useState(0);
   const [showLoading1, setShowLoading1] = useState(false);
