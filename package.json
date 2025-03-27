@@ -1,7 +1,7 @@
 {
   "name": "lanparty",
   "version": "0.1.0",
-  "homepage": "https://lan-party.fun/",
+  "homepage": "https://riadelm.github.io",
   "private": true,
   "devDependencies": {
     "gh-pages": "^6.1.1"
